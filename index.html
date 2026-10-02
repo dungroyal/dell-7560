@@ -5,262 +5,859 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f4f7fb">
   <title>Checklist Dell Precision 7560</title>
-
+  <link rel="icon" href="data:image/webp;base64,UklGRuQAAABXRUJQVlA4INgAAADwBQCdASocABwAPtEutFooIagoGAEAGglsAJ0yhHAV/+N4Fv/smVIz9pEk/3w0jvEQlfy1+NoUAAD+cZXj1CY9wAqF39WxQRyrYXCyDby+O1dyc3q/T+7ca6f/3FeLa7lobFP/+dp1PSuiLFErf9bVs9OQ15o38T/jbBVCZEXWuCdbboF9RsN7PUymIJbs3k+9zFSE3BQO6ngkaX7QkoxdH2QcZXPTp/DL7A8C3DvawMdeejN9/Jjg9BpdyQ/wLV2TnPPuOG2IzNcKgSILC4ehVBzbQsZDwAA=" type="image/x-icon" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,400..1000&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
   <style>
     :root{
-      --bg:#f4f7fb; --surface:#fff; --surface2:#f8fafc; --text:#172033; --muted:#667085;
-      --line:#dfe6ee; --blue:#2563eb; --blue2:#e8f0ff; --green:#15803d; --greenBg:#ecfdf3;
-      --amber:#b7791f; --amberBg:#fff8e1; --red:#b42318; --redBg:#fff1f0;
-      --shadow:0 10px 28px rgba(31,41,55,.07); --radius:20px;
+      --bg:#f4f7fb;
+      --surface:#ffffff;
+      --surface-soft:#f8fafc;
+      --text:#122033;
+      --muted:#657387;
+      --line:#dde5ee;
+      --blue:#1f5eff;
+      --blue-strong:#1849c6;
+      --blue-soft:#eaf1ff;
+      --green:#16803e;
+      --green-soft:#ecf9f0;
+      --amber:#a96812;
+      --amber-soft:#fff7e7;
+      --red:#b42318;
+      --red-soft:#fff1ef;
+      --shadow:0 10px 28px rgba(16,24,40,.065);
+      --shadow-hover:0 18px 40px rgba(16,24,40,.11);
+      --radius-xl:28px;
+      --radius-lg:20px;
+      --radius-md:15px;
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
-      margin:0; min-width:320px; background:var(--bg); color:var(--text);
-      font-family:"Roboto",Arial,sans-serif; font-size:16px; line-height:1.55;
+      margin:0;
+      min-width:320px;
+      overflow-x:hidden;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 5% -5%,rgba(31,94,255,.09),transparent 30rem),
+        linear-gradient(180deg,#f7faff 0,#f4f7fb 22%,#f4f7fb 100%);
+      font-family:"Google Sans Flex","Segoe UI",Arial,sans-serif;
+      font-size:16px;
+      line-height:1.55;
       -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
     }
+
     button,input{font:inherit}
     button{cursor:pointer}
-    a{color:inherit;text-decoration:none}
-    .app{width:100%;padding:18px 22px 80px}
+    a{text-decoration:none;color:inherit}
+
+    .app{
+      width:100%;
+      padding:20px 26px 88px;
+    }
+
+    /* ===== TOPBAR ===== */
     .topbar{
-      position:sticky; top:0; z-index:50; margin:-18px -22px 18px;
-      padding:12px 22px; background:rgba(244,247,251,.92); backdrop-filter:blur(16px);
-      border-bottom:1px solid rgba(223,230,238,.9);
+      position:sticky;
+      top:0;
+      z-index:60;
+      margin:-20px -26px 18px;
+      padding:11px 26px;
+      border-bottom:1px solid rgba(221,229,238,.88);
+      background:rgba(247,250,255,.88);
+      backdrop-filter:blur(18px);
     }
-    .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:14px}
-    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .topbar-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .brand{
+      min-width:0;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
     .brand-icon{
-      width:44px;height:44px;border-radius:15px;display:grid;place-items:center;
-      background:linear-gradient(135deg,#2563eb,#1748b8);color:#fff;font-size:21px;
-      box-shadow:0 8px 20px rgba(37,99,235,.24);flex:0 0 44px;
+      width:44px;height:44px;
+      flex:0 0 44px;
+      display:grid;
+      place-items:center;
+      border-radius:15px;
+      color:#fff;
+      font-size:21px;
+      background:linear-gradient(145deg,#2868ff,#1747bf);
+      box-shadow:0 8px 20px rgba(31,94,255,.23);
     }
-    .brand h1{margin:0;font-size:20px;line-height:1.15;letter-spacing:-.02em}
-    .brand p{margin:4px 0 0;color:var(--muted);font-size:12px}
+    .brand h1{
+      margin:0;
+      font-size:20px;
+      line-height:1.15;
+      letter-spacing:-.025em;
+      font-weight:780;
+    }
+    .brand p{
+      margin:4px 0 0;
+      color:var(--muted);
+      font-size:12px;
+      font-weight:520;
+    }
+
     .top-actions{display:flex;gap:8px}
     .btn{
-      border:1px solid var(--line);background:#fff;color:#344054;border-radius:12px;
-      min-height:42px;padding:0 14px;display:inline-flex;align-items:center;justify-content:center;
-      gap:7px;font-weight:800;font-size:12px;transition:.18s ease;
+      min-height:42px;
+      padding:0 14px;
+      border:1px solid var(--line);
+      border-radius:13px;
+      background:rgba(255,255,255,.96);
+      color:#354156;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:7px;
+      font-size:12px;
+      font-weight:720;
+      transition:.18s ease;
+      box-shadow:0 2px 8px rgba(16,24,40,.025);
     }
-    .btn:hover{transform:translateY(-1px);box-shadow:0 7px 18px rgba(31,41,55,.08)}
+    .btn:hover{
+      transform:translateY(-1px);
+      border-color:#c8d7e8;
+      box-shadow:0 8px 20px rgba(16,24,40,.075);
+    }
     .btn.danger{color:var(--red)}
 
+    /* ===== OVERVIEW ===== */
     .overview{
-      display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px;align-items:stretch;margin-bottom:14px;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+      margin-bottom:14px;
     }
     .machine{
-      background:linear-gradient(135deg,#eaf2ff,#fff 60%,#eefbf4);border:1px solid var(--line);
-      border-radius:24px;padding:22px 24px;box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+      min-height:150px;
+      padding:24px 28px;
+      border:1px solid #dbe5f2;
+      border-radius:var(--radius-xl);
+      background:
+        linear-gradient(120deg,rgba(234,241,255,.95),rgba(255,255,255,.98) 55%,rgba(237,250,244,.94));
+      box-shadow:var(--shadow);
     }
-    .machine .kicker{font-size:11px;font-weight:900;color:#1748b8;text-transform:uppercase;letter-spacing:.05em}
-    .machine h2{margin:6px 0 8px;font-size:29px;letter-spacing:-.035em;line-height:1.1}
-    .specs{display:flex;flex-wrap:wrap;gap:8px}
-    .spec{background:rgba(255,255,255,.88);border:1px solid rgba(255,255,255,.95);border-radius:999px;padding:8px 11px;font-size:11px;font-weight:800}
-    .price{
-      min-width:220px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:18px 20px;
-      box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:center;
+    .machine:after{
+      content:"";
+      position:absolute;
+      width:250px;height:250px;
+      right:-85px;top:-120px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(31,94,255,.12),rgba(31,94,255,0) 68%);
+      pointer-events:none;
     }
-    .price small{color:var(--muted);font-size:10px;font-weight:900;text-transform:uppercase}
-    .price strong{font-size:27px;line-height:1.1;margin-top:3px}
-    .price span{font-size:11px;color:var(--muted);margin-top:5px}
+    .machine .kicker{
+      position:relative;
+      z-index:1;
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      color:var(--blue-strong);
+      font-size:11px;
+      font-weight:850;
+      letter-spacing:.055em;
+      text-transform:uppercase;
+    }
+    .machine .kicker:before{
+      content:"";
+      width:7px;height:7px;border-radius:50%;
+      background:var(--blue);
+      box-shadow:0 0 0 4px rgba(31,94,255,.09);
+    }
+    .machine h2{
+      position:relative;
+      z-index:1;
+      margin:8px 0 14px;
+      font-size:34px;
+      line-height:1.05;
+      letter-spacing:-.045em;
+      font-weight:820;
+    }
+    .specs{
+      position:relative;
+      z-index:1;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .spec{
+      min-height:36px;
+      display:inline-flex;
+      align-items:center;
+      padding:0 12px;
+      border:1px solid rgba(255,255,255,.95);
+      border-radius:999px;
+      background:rgba(255,255,255,.86);
+      color:#253247;
+      font-size:11px;
+      font-weight:740;
+      box-shadow:0 2px 8px rgba(16,24,40,.025);
+    }
 
+    /* ===== PROGRESS ===== */
     .statusbar{
-      position:sticky;top:69px;z-index:40;display:grid;grid-template-columns:minmax(240px,1fr) auto;
-      gap:12px;align-items:center;margin-bottom:14px;padding:12px 14px;background:rgba(255,255,255,.94);
-      backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:16px;box-shadow:0 6px 18px rgba(31,41,55,.06);
+      position:sticky;
+      top:69px;
+      z-index:45;
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      gap:16px;
+      align-items:center;
+      margin-bottom:14px;
+      padding:13px 15px;
+      border:1px solid var(--line);
+      border-radius:17px;
+      background:rgba(255,255,255,.93);
+      box-shadow:0 6px 18px rgba(16,24,40,.055);
+      backdrop-filter:blur(14px);
     }
-    .progress-wrap{display:flex;align-items:center;gap:12px;min-width:0}
-    .progress-info{min-width:120px}
-    .progress-info b{display:block;font-size:14px}
-    .progress-info span{display:block;color:var(--muted);font-size:10px;margin-top:2px}
-    .progress{flex:1;height:10px;background:#e8eef5;border-radius:999px;overflow:hidden;min-width:100px}
-    .progress > span{display:block;height:100%;width:0;background:linear-gradient(90deg,#2563eb,#16a34a);border-radius:999px;transition:.25s ease}
-    .counters{display:flex;gap:7px}
-    .counter{min-width:78px;padding:8px 10px;border-radius:12px;background:var(--surface2);text-align:center}
-    .counter b{display:block;font-size:14px}
-    .counter span{display:block;font-size:8px;color:var(--muted);text-transform:uppercase;font-weight:900}
-    .counter.pass b{color:var(--green)} .counter.warn b{color:var(--amber)} .counter.fail b{color:var(--red)}
+    .progress-wrap{
+      min-width:0;
+      display:grid;
+      grid-template-columns:145px minmax(120px,1fr);
+      gap:14px;
+      align-items:center;
+    }
+    .progress-info b{
+      display:block;
+      font-size:14px;
+      font-weight:780;
+    }
+    .progress-info span{
+      display:block;
+      margin-top:2px;
+      color:var(--muted);
+      font-size:10px;
+      font-weight:560;
+    }
+    .progress{
+      height:10px;
+      overflow:hidden;
+      border-radius:999px;
+      background:#e9eef5;
+    }
+    .progress>span{
+      display:block;
+      width:0;
+      height:100%;
+      border-radius:inherit;
+      background:linear-gradient(90deg,#1f5eff,#19a45b);
+      transition:width .3s ease;
+    }
+    .counters{
+      display:flex;
+      gap:7px;
+    }
+    .counter{
+      min-width:78px;
+      padding:8px 10px;
+      border-radius:12px;
+      background:var(--surface-soft);
+      text-align:center;
+    }
+    .counter b{
+      display:block;
+      font-size:14px;
+      line-height:1;
+      font-weight:820;
+    }
+    .counter span{
+      display:block;
+      margin-top:3px;
+      color:var(--muted);
+      font-size:8px;
+      font-weight:800;
+      letter-spacing:.03em;
+      text-transform:uppercase;
+    }
+    .counter.pass b{color:var(--green)}
+    .counter.warn b{color:var(--amber)}
+    .counter.fail b{color:var(--red)}
 
-    .controls{display:grid;grid-template-columns:minmax(240px,1fr) auto;gap:10px;margin-bottom:14px}
-    .search{
-      height:48px;border:1px solid var(--line);border-radius:14px;background:#fff;padding:0 15px;
-      outline:none;font-size:13px;box-shadow:0 2px 8px rgba(31,41,55,.03);
+    /* ===== CONTROLS ===== */
+    .controls{
+      display:grid;
+      grid-template-columns:minmax(320px,.9fr) minmax(0,1.7fr);
+      gap:10px;
+      align-items:center;
+      margin-bottom:15px;
     }
-    .search:focus{border-color:#9dbcfb;box-shadow:0 0 0 3px rgba(37,99,235,.1)}
-    .filters{display:flex;gap:7px;overflow-x:auto;scrollbar-width:none}
+    .search{
+      width:100%;
+      height:48px;
+      padding:0 15px;
+      outline:none;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:#fff;
+      color:var(--text);
+      font-size:13px;
+      font-weight:520;
+      box-shadow:0 3px 10px rgba(16,24,40,.03);
+    }
+    .search:focus{
+      border-color:#9ab8ff;
+      box-shadow:0 0 0 4px rgba(31,94,255,.09);
+    }
+    .filters{
+      display:flex;
+      justify-content:flex-start;
+      gap:7px;
+      overflow-x:auto;
+      scrollbar-width:none;
+      padding:1px;
+    }
     .filters::-webkit-scrollbar{display:none}
     .filter-btn{
-      flex:0 0 auto;border:1px solid var(--line);border-radius:999px;background:#fff;color:#475467;
-      min-height:48px;padding:0 14px;font-size:11px;font-weight:800;display:flex;align-items:center;gap:7px;
+      flex:0 0 auto;
+      min-height:48px;
+      padding:0 14px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:#fff;
+      color:#445066;
+      display:flex;
+      align-items:center;
+      gap:7px;
+      font-size:11px;
+      font-weight:720;
+      transition:.18s ease;
     }
-    .filter-btn.active{background:var(--blue);border-color:var(--blue);color:#fff}
+    .filter-btn:hover{
+      border-color:#c9d7e8;
+      background:#fbfdff;
+    }
+    .filter-btn.active{
+      border-color:var(--blue);
+      background:var(--blue);
+      color:#fff;
+      box-shadow:0 8px 18px rgba(31,94,255,.19);
+    }
 
+
+    .filter-btn.quick-filter{
+      border-color:#cfd8e6;
+      background:#f8fafc;
+      color:#344054;
+    }
+    .filter-btn.quick-filter i{
+      font-size:13px;
+    }
+    .filter-btn[data-filter="untested"].active{
+      background:#475467;
+      border-color:#475467;
+      color:#fff;
+      box-shadow:0 8px 18px rgba(71,84,103,.18);
+    }
+    .filter-btn[data-filter="important"]{
+      border-color:#f0c8c3;
+      background:#fff7f6;
+      color:#9f2d23;
+    }
+    .filter-btn[data-filter="important"].active{
+      background:#b42318;
+      border-color:#b42318;
+      color:#fff;
+      box-shadow:0 8px 18px rgba(180,35,24,.18);
+    }
+
+    .tab-count{
+      min-width:20px;
+      height:20px;
+      padding:0 6px;
+      border-radius:999px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(17,24,39,.07);
+      font-size:9px;
+      font-weight:850;
+    }
+    .filter-btn.active .tab-count{
+      background:rgba(255,255,255,.18);
+      color:#fff;
+    }
+
+    .filter-separator{
+      width:1px;
+      align-self:stretch;
+      background:#dfe6ee;
+      margin:6px 2px;
+      flex:0 0 1px;
+    }
+
+    /* ===== GRID ===== */
     .grid{
-      display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:14px;
     }
+
     .test-card{
-      position:relative;min-height:188px;background:#fff;border:1px solid var(--line);border-radius:20px;
-      padding:18px;box-shadow:0 4px 16px rgba(31,41,55,.045);transition:.2s ease;cursor:pointer;overflow:hidden;
+      position:relative;
+      min-height:208px;
+      overflow:hidden;
+      padding:18px 18px 52px;
+      border:1px solid var(--line);
+      border-radius:21px;
+      background:#fff;
+      box-shadow:0 5px 18px rgba(16,24,40,.045);
+      cursor:pointer;
+      transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease,background .2s ease;
     }
-    .test-card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(31,41,55,.10);border-color:#bfd3ff}
-    .test-card::before{
-      content:"";position:absolute;inset:0 auto 0 0;width:5px;background:#d7dee8;transition:.2s ease;
+    .test-card:before{
+      content:"";
+      position:absolute;
+      inset:0 auto 0 0;
+      width:5px;
+      background:#dfe6ef;
+      transition:.2s ease;
     }
-    .test-card[data-state="pass"]{background:var(--greenBg);border-color:#bfe5ca}
-    .test-card[data-state="pass"]::before{background:var(--green)}
-    .test-card[data-state="warn"]{background:var(--amberBg);border-color:#efd99d}
-    .test-card[data-state="warn"]::before{background:var(--amber)}
-    .test-card[data-state="fail"]{background:var(--redBg);border-color:#f0c0bb}
-    .test-card[data-state="fail"]::before{background:var(--red)}
-    .card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+    .test-card:hover{
+      transform:translateY(-3px);
+      border-color:#c8d8ea;
+      box-shadow:var(--shadow-hover);
+    }
+    .test-card[data-state="pass"]{
+      border-color:#bfe4ca;
+      background:linear-gradient(180deg,#f7fff9,#ecf9f0);
+    }
+    .test-card[data-state="pass"]:before{background:var(--green)}
+    .test-card[data-state="warn"]{
+      border-color:#edd7a0;
+      background:linear-gradient(180deg,#fffdf8,#fff7e7);
+    }
+    .test-card[data-state="warn"]:before{background:var(--amber)}
+    .test-card[data-state="fail"]{
+      border-color:#efc1bc;
+      background:linear-gradient(180deg,#fffafa,#fff1ef);
+    }
+    .test-card[data-state="fail"]:before{background:var(--red)}
+
+    .card-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+    }
     .card-icon{
-      width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:var(--blue2);
-      color:var(--blue);font-size:23px;flex:0 0 48px;
+      width:50px;height:50px;
+      flex:0 0 50px;
+      display:grid;
+      place-items:center;
+      border-radius:16px;
+      background:var(--blue-soft);
+      color:var(--blue);
+      font-size:23px;
+      box-shadow:inset 0 0 0 1px rgba(31,94,255,.03);
     }
-    .test-card[data-state="pass"] .card-icon{background:#d7f3df;color:var(--green)}
-    .test-card[data-state="warn"] .card-icon{background:#f8e9bd;color:var(--amber)}
-    .test-card[data-state="fail"] .card-icon{background:#ffd8d4;color:var(--red)}
+    .test-card[data-state="pass"] .card-icon{background:#dff3e5;color:var(--green)}
+    .test-card[data-state="warn"] .card-icon{background:#f7e8bf;color:var(--amber)}
+    .test-card[data-state="fail"] .card-icon{background:#ffdcd7;color:var(--red)}
+
     .card-num{
-      padding:5px 8px;border-radius:999px;background:#f2f4f7;color:#667085;font-size:9px;font-weight:900;
+      min-width:38px;
+      min-height:28px;
+      padding:0 9px;
+      display:grid;
+      place-items:center;
+      border-radius:999px;
+      background:#f3f5f8;
+      color:#78859a;
+      font-size:9px;
+      font-weight:850;
     }
-    .card-title{margin:13px 0 7px;font-size:17px;line-height:1.32;letter-spacing:-.015em}
+    .card-title{
+      margin:14px 0 7px;
+      color:#152338;
+      font-size:18px;
+      line-height:1.3;
+      letter-spacing:-.018em;
+      font-weight:780;
+    }
     .card-desc{
-      margin:0;color:var(--muted);font-size:12px;line-height:1.55;
-      display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.62;
+      font-weight:450;
+      display:-webkit-box;
+      -webkit-line-clamp:3;
+      -webkit-box-orient:vertical;
+      overflow:hidden;
     }
-    .card-footer{position:absolute;left:18px;right:18px;bottom:14px;display:flex;align-items:center;justify-content:space-between;gap:8px}
-    .category-pill{font-size:9px;color:#475467;font-weight:800;display:flex;align-items:center;gap:5px}
-    .state-pill{font-size:9px;font-weight:900;color:#98a2b3}
+    .card-footer{
+      position:absolute;
+      left:18px;right:18px;bottom:15px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+    }
+    .category-pill{
+      min-width:0;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      color:#546176;
+      font-size:9px;
+      font-weight:740;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .state-pill{
+      flex:0 0 auto;
+      color:#98a2b3;
+      font-size:9px;
+      font-weight:850;
+      letter-spacing:.02em;
+      text-transform:uppercase;
+    }
     .test-card[data-state="pass"] .state-pill{color:var(--green)}
     .test-card[data-state="warn"] .state-pill{color:var(--amber)}
     .test-card[data-state="fail"] .state-pill{color:var(--red)}
-    .critical-dot{position:absolute;right:14px;top:14px;width:9px;height:9px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px rgba(180,35,24,.08)}
 
-    .empty{display:none;padding:40px 18px;text-align:center;color:var(--muted);font-size:14px}
-
-    /* Modal */
-    .modal-backdrop{
-      position:fixed;inset:0;z-index:100;background:rgba(15,23,42,.56);backdrop-filter:blur(5px);
-      opacity:0;pointer-events:none;transition:.2s ease;padding:18px;display:grid;place-items:center;
+    .critical-dot{
+      position:absolute;
+      right:16px;
+      top:16px;
+      width:9px;height:9px;
+      border-radius:50%;
+      background:var(--red);
+      box-shadow:0 0 0 4px rgba(180,35,24,.08);
     }
-    .modal-backdrop.open{opacity:1;pointer-events:auto}
+
+    .empty{
+      display:none;
+      padding:42px 20px;
+      color:var(--muted);
+      text-align:center;
+      font-size:14px;
+    }
+
+    /* ===== MODAL ===== */
+    .modal-backdrop{
+      position:fixed;
+      inset:0;
+      z-index:110;
+      display:grid;
+      place-items:center;
+      padding:20px;
+      background:rgba(15,23,42,.58);
+      backdrop-filter:blur(7px);
+      opacity:0;
+      pointer-events:none;
+      transition:.2s ease;
+    }
+    .modal-backdrop.open{
+      opacity:1;
+      pointer-events:auto;
+    }
     .modal{
-      width:min(980px,100%);max-height:min(88vh,900px);overflow:auto;background:#fff;border-radius:24px;
-      box-shadow:0 30px 80px rgba(15,23,42,.28);transform:translateY(14px) scale(.985);transition:.2s ease;
+      width:min(980px,100%);
+      max-height:min(88vh,920px);
+      overflow:auto;
+      border:1px solid rgba(255,255,255,.5);
+      border-radius:26px;
+      background:#fff;
+      box-shadow:0 32px 90px rgba(15,23,42,.28);
+      transform:translateY(14px) scale(.985);
+      transition:.2s ease;
     }
     .modal-backdrop.open .modal{transform:none}
+
     .modal-head{
-      position:sticky;top:0;z-index:2;display:flex;align-items:flex-start;justify-content:space-between;gap:14px;
-      padding:18px 20px;background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);
+      position:sticky;
+      top:0;
+      z-index:3;
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:16px;
+      padding:19px 21px;
+      border-bottom:1px solid var(--line);
+      background:rgba(255,255,255,.95);
+      backdrop-filter:blur(16px);
     }
-    .modal-title-wrap{display:flex;align-items:flex-start;gap:13px;min-width:0}
+    .modal-title-wrap{
+      min-width:0;
+      display:flex;
+      align-items:flex-start;
+      gap:14px;
+    }
     .modal-icon{
-      width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:var(--blue2);color:var(--blue);
-      font-size:24px;flex:0 0 52px;
+      width:54px;height:54px;
+      flex:0 0 54px;
+      display:grid;
+      place-items:center;
+      border-radius:17px;
+      background:var(--blue-soft);
+      color:var(--blue);
+      font-size:25px;
     }
-    .modal-kicker{font-size:10px;color:var(--muted);font-weight:900;text-transform:uppercase}
-    .modal-head h2{margin:3px 0 0;font-size:23px;line-height:1.25;letter-spacing:-.02em}
+    .modal-kicker{
+      color:var(--muted);
+      font-size:10px;
+      font-weight:830;
+      letter-spacing:.045em;
+      text-transform:uppercase;
+    }
+    .modal-head h2{
+      margin:3px 0 0;
+      color:#17243a;
+      font-size:24px;
+      line-height:1.25;
+      letter-spacing:-.025em;
+      font-weight:800;
+    }
     .close{
-      width:40px;height:40px;border:1px solid var(--line);background:#fff;border-radius:12px;font-size:18px;color:#475467;
-      display:grid;place-items:center;flex:0 0 40px;
+      width:42px;height:42px;
+      flex:0 0 42px;
+      border:1px solid var(--line);
+      border-radius:13px;
+      background:#fff;
+      color:#536176;
+      display:grid;
+      place-items:center;
+      font-size:18px;
     }
-    .modal-body{padding:20px}
-    .intro{font-size:15px;color:#475467;line-height:1.7;margin:0 0 16px}
-    .section-box{border:1px solid var(--line);border-radius:16px;padding:15px;margin-top:12px;background:#fbfcfe}
-    .section-box h3{margin:0 0 9px;font-size:14px;display:flex;align-items:center;gap:7px}
-    .steps{margin:0;padding-left:22px;color:#475467;font-size:13px;line-height:1.7}
-    .steps li+li{margin-top:5px}
-    .rule-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
-    .rule{border-radius:15px;padding:13px;font-size:12px;line-height:1.6}
-    .rule.pass{background:var(--greenBg);border:1px solid #c4e9ce;color:#166534}
-    .rule.fail{background:var(--redBg);border:1px solid #f0c7c3;color:#8a251d}
-    .tool-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+
+    .modal-body{padding:21px}
+    .intro{
+      margin:0 0 16px;
+      color:#4b586e;
+      font-size:15px;
+      line-height:1.72;
+    }
+    .section-box{
+      margin-top:12px;
+      padding:16px;
+      border:1px solid var(--line);
+      border-radius:17px;
+      background:#fbfcfe;
+    }
+    .section-box h3{
+      margin:0 0 9px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      color:#27354b;
+      font-size:14px;
+      font-weight:780;
+    }
+    .steps{
+      margin:0;
+      padding-left:22px;
+      color:#4a586f;
+      font-size:13px;
+      line-height:1.72;
+    }
+    .steps li+li{margin-top:6px}
+
+    .rule-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:12px;
+    }
+    .rule{
+      padding:14px;
+      border-radius:16px;
+      font-size:12px;
+      line-height:1.62;
+    }
+    .rule.pass{
+      border:1px solid #c4e8cd;
+      background:var(--green-soft);
+      color:#166534;
+    }
+    .rule.fail{
+      border:1px solid #efc5c0;
+      background:var(--red-soft);
+      color:#8a251d;
+    }
+
+    .tool-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:13px;
+    }
     .tool{
-      min-height:38px;padding:0 12px;border-radius:11px;background:#edf4ff;border:1px solid #cfe0ff;color:#1748b8;
-      display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;
+      min-height:39px;
+      padding:0 12px;
+      border:1px solid #cddcff;
+      border-radius:11px;
+      background:#edf4ff;
+      color:#1748b8;
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      font-size:11px;
+      font-weight:730;
+      transition:.18s ease;
     }
-    .modal-note{margin-top:10px;color:var(--muted);font-size:11px;font-style:italic}
+    .tool:hover{
+      background:#e4eeff;
+      transform:translateY(-1px);
+    }
+    .modal-note{
+      margin-top:11px;
+      color:var(--muted);
+      font-size:11px;
+      font-style:italic;
+      line-height:1.55;
+    }
+
     .modal-actions{
-      position:sticky;bottom:0;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:9px;padding:14px 20px 18px;
-      background:linear-gradient(180deg,rgba(255,255,255,.75),#fff 25%);border-top:1px solid var(--line);
+      position:sticky;
+      bottom:0;
+      z-index:3;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:9px;
+      padding:14px 20px 18px;
+      border-top:1px solid var(--line);
+      background:linear-gradient(180deg,rgba(255,255,255,.84),#fff 26%);
+      backdrop-filter:blur(12px);
     }
     .status-btn{
-      min-height:48px;border-radius:14px;border:1px solid var(--line);background:#fff;font-size:12px;font-weight:900;
-      display:flex;align-items:center;justify-content:center;gap:8px;
+      min-height:50px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      font-size:12px;
+      font-weight:820;
+      transition:.18s ease;
     }
-    .status-btn.pass{color:var(--green)} .status-btn.warn{color:var(--amber)} .status-btn.fail{color:var(--red)}
-    .status-btn.pass.active{background:var(--green);color:#fff;border-color:var(--green)}
-    .status-btn.warn.active{background:var(--amber);color:#fff;border-color:var(--amber)}
-    .status-btn.fail.active{background:var(--red);color:#fff;border-color:var(--red)}
+    .status-btn:hover{transform:translateY(-1px)}
+    .status-btn.pass{color:var(--green)}
+    .status-btn.warn{color:var(--amber)}
+    .status-btn.fail{color:var(--red)}
+    .status-btn.pass.active{border-color:var(--green);background:var(--green);color:#fff}
+    .status-btn.warn.active{border-color:var(--amber);background:var(--amber);color:#fff}
+    .status-btn.fail.active{border-color:var(--red);background:var(--red);color:#fff}
 
     .toast{
-      position:fixed;z-index:120;right:20px;bottom:20px;background:#101828;color:#fff;border-radius:13px;
-      padding:11px 14px;font-size:11px;box-shadow:0 16px 40px rgba(15,23,42,.22);opacity:0;transform:translateY(10px);
-      transition:.2s ease;pointer-events:none;
+      position:fixed;
+      z-index:130;
+      right:20px;
+      bottom:20px;
+      max-width:340px;
+      padding:11px 14px;
+      border-radius:13px;
+      background:#101828;
+      color:#fff;
+      font-size:11px;
+      box-shadow:0 16px 40px rgba(15,23,42,.22);
+      opacity:0;
+      transform:translateY(10px);
+      pointer-events:none;
+      transition:.2s ease;
     }
     .toast.show{opacity:1;transform:none}
 
-    @media (min-width:1500px){
+    /* ===== DESKTOP SCALE ===== */
+    @media (min-width:1450px){
       .app{padding-left:30px;padding-right:30px}
       .topbar{margin-left:-30px;margin-right:-30px;padding-left:30px;padding-right:30px}
-      .grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:15px}
-      .test-card{min-height:200px;padding:20px}
-      .card-title{font-size:18px}
-      .card-desc{font-size:13px}
+      .grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+      .test-card{min-height:216px;padding:19px 19px 54px}
+      .card-title{font-size:19px}
+      .card-desc{font-size:13.5px}
     }
-    @media (max-width:1150px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    @media (max-width:820px){
-      .overview{grid-template-columns:1fr} .price{min-width:0}
-      .statusbar{top:65px;grid-template-columns:1fr}
+
+    @media (min-width:1850px){
+      .grid{grid-template-columns:repeat(5,minmax(0,1fr))}
+    }
+
+    @media (max-width:1180px){
       .controls{grid-template-columns:1fr}
+      .grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+    }
+
+    @media (max-width:900px){
+      .overview{grid-template-columns:1fr}
+      .statusbar{top:67px;grid-template-columns:1fr}
       .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
       .counters{justify-content:space-between}
       .counter{flex:1}
     }
+
     @media (max-width:620px){
       body{font-size:15px}
-      .app{padding:10px 10px 60px}
+      .app{padding:10px 10px 62px}
       .topbar{margin:-10px -10px 10px;padding:9px 10px}
       .brand-icon{width:38px;height:38px;flex-basis:38px;border-radius:13px;font-size:18px}
-      .brand h1{font-size:15px} .brand p{font-size:9px}
-      .top-actions .label{display:none} .btn{min-height:38px;padding:0 10px}
-      .machine{padding:18px;border-radius:20px} .machine h2{font-size:24px}
-      .machine .kicker{font-size:9px} .spec{font-size:9px;padding:7px 9px}
-      .price{padding:15px;border-radius:19px} .price strong{font-size:23px}
-      .statusbar{top:57px;padding:10px;border-radius:14px}
-      .progress-info b{font-size:12px} .progress-info span{font-size:9px}
-      .counter{min-width:0;padding:7px 5px} .counter b{font-size:12px}
-      .controls{gap:7px}
+      .brand h1{font-size:15px}
+      .brand p{font-size:9px}
+      .top-actions .label{display:none}
+      .btn{min-height:38px;padding:0 10px}
+
+      .machine{min-height:0;padding:20px 18px;border-radius:21px}
+      .machine h2{font-size:27px;margin-bottom:12px}
+      .machine .kicker{font-size:9px}
+      .spec{min-height:32px;padding:0 10px;font-size:9px}
+.statusbar{top:57px;padding:10px;border-radius:14px}
+      .progress-wrap{grid-template-columns:1fr;gap:8px}
+      .progress-info b{font-size:12px}
+      .progress-info span{font-size:9px}
+      .counter{min-width:0;padding:7px 5px}
+      .counter b{font-size:12px}
+
+      .controls{gap:8px}
       .search{height:44px;font-size:12px}
       .filter-btn{min-height:42px;padding:0 11px;font-size:9px}
-      .grid{grid-template-columns:1fr;gap:9px}
-      .test-card{min-height:172px;padding:16px;border-radius:17px}
-      .card-icon{width:44px;height:44px;flex-basis:44px;border-radius:14px;font-size:21px}
-      .card-title{font-size:16px;margin-top:11px}
+
+      .grid{grid-template-columns:1fr;gap:10px}
+      .test-card{min-height:178px;padding:16px 16px 48px;border-radius:18px}
+      .card-icon{width:46px;height:46px;flex-basis:46px;border-radius:14px;font-size:21px}
+      .card-title{font-size:16px;margin-top:12px}
       .card-desc{font-size:11px;-webkit-line-clamp:2}
-      .card-footer{left:16px;right:16px}
-      .modal-backdrop{padding:8px;align-items:end}
-      .modal{width:100%;max-height:92vh;border-radius:22px 22px 14px 14px}
+      .card-footer{left:16px;right:16px;bottom:13px}
+
+      .modal-backdrop{padding:8px;place-items:end center}
+      .modal{width:100%;max-height:93vh;border-radius:23px 23px 14px 14px}
       .modal-head{padding:14px}
-      .modal-icon{width:44px;height:44px;flex-basis:44px;font-size:21px}
-      .modal-head h2{font-size:18px}
+      .modal-icon{width:46px;height:46px;flex-basis:46px;border-radius:15px;font-size:21px}
+      .modal-head h2{font-size:19px}
       .modal-body{padding:14px}
       .intro{font-size:13px}
-      .section-box{padding:12px}
-      .steps{font-size:12px;line-height:1.65}
+      .section-box{padding:13px}
+      .steps{font-size:12px}
       .rule-grid{grid-template-columns:1fr}
       .modal-actions{padding:10px;gap:6px}
-      .status-btn{min-height:44px;font-size:10px}
+      .status-btn{min-height:45px;font-size:10px}
+      .toast{left:10px;right:10px;bottom:10px;max-width:none;text-align:center}
     }
-    @media print{.topbar,.controls,.modal-backdrop,.toast{display:none!important} .grid{grid-template-columns:repeat(3,1fr)}}
+
+    @media print{
+      .topbar,.controls,.modal-backdrop,.toast{display:none!important}
+      .app{padding:0}
+      .overview,.statusbar{position:static}
+      .grid{grid-template-columns:repeat(3,1fr)}
+      .test-card{box-shadow:none;break-inside:avoid}
+    }
   </style>
 </head>
 <body>
@@ -292,11 +889,6 @@
           <span class="spec">RTX A4000 8GB</span>
           <span class="spec">15.6" 4K</span>
         </div>
-      </div>
-      <div class="price">
-        <small>Giá đang cân nhắc</small>
-        <strong>26,6 triệu</strong>
-        <span>Ưu tiên test kỹ GPU · màn · main · Windows · bảo hành</span>
       </div>
     </section>
 
@@ -367,7 +959,7 @@
   <div class="toast" id="toast"></div>
 
   <script>
-    const ITEMS = [{"id": "01", "group": "physical", "title": "Kiểm tra khung vỏ, 4 góc và đáy máy", "desc": "Tìm dấu móp, cong khung, khe vỏ hở, nứt, vết va đập mạnh. Quan sát ốc đáy: ốc toét nhiều hoặc thiếu ốc cho thấy máy từng tháo sửa nhiều.", "tip": "Không đánh giá chỉ theo % ngoại hình shop ghi.", "critical": false, "icon": "bi-laptop", "guide": {"steps": ["Đặt máy trên mặt bàn phẳng, quan sát từ trước/sau/trái/phải để phát hiện khung bị vênh.", "Soi kỹ 4 góc, mép màn, kê tay và đáy máy; tìm dấu móp mạnh, nứt, hở ron hoặc khe vỏ không đều.", "Quan sát đầu ốc đáy. Một vài dấu tháo là bình thường ở máy cũ, nhưng nhiều ốc toét/khác loại hoặc thiếu ốc là dấu hiệu cần hỏi lịch sử sửa chữa.", "Kiểm tra tem Service Tag ở đáy máy còn nguyên và đọc được."], "pass": "PASS khi khung thẳng, vỏ ráp khít, không nứt/móp nghiêm trọng, ốc đầy đủ và không có dấu hiệu tháo sửa cẩu thả.", "fail": "XEM LẠI/FAIL nếu khung cong, khe vỏ hở lớn, bản lề kéo bung vỏ hoặc ốc/main có dấu hiệu can thiệp bất thường.", "tools": []}}, {"id": "02", "group": "physical", "title": "Test bản lề và viền màn hình", "desc": "Mở/đóng màn hình nhiều lần. Bản lề phải chắc, không phát tiếng rắc, không lệch, không khiến viền màn hở hoặc màn tự tụt.", "tip": "", "critical": false, "icon": "bi-display", "guide": {"steps": ["Mở màn từ đóng hoàn toàn lên khoảng 30°, 90°, 120° rồi gần tối đa; thao tác chậm và đều.", "Đóng/mở 5–10 lần, quan sát bản lề hai bên có chuyển động đồng đều không.", "Dùng một tay giữ thân máy, rung nhẹ màn ở góc 90°; không nên có độ rơ quá lớn.", "Trong lúc mở/đóng, quan sát viền màn có bị tách, kêu rắc hoặc nhấp nháy hình ảnh không."], "pass": "PASS khi bản lề chắc, lực mở đều, màn giữ được góc và không gây nhấp nháy/tách viền.", "fail": "FAIL nếu nghe tiếng nứt/rắc, bản lề lệch, vỏ bung hoặc màn mất tín hiệu khi thay đổi góc.", "tools": []}}, {"id": "03", "group": "physical", "title": "Quan sát touchpad / kê tay có dấu hiệu pin phồng", "desc": "Touchpad bị đội lên, click không đều hoặc khe kê tay bị hở có thể là dấu hiệu pin phồng.", "tip": "", "critical": false, "icon": "bi-battery-exclamation", "guide": {"steps": ["Nhìn ngang phần kê tay và touchpad để phát hiện bề mặt bị đội lên.", "Bấm 4 góc touchpad; lực click nên tương đối đều và touchpad không bị kẹt.", "Quan sát khe giữa đáy máy và kê tay. Pin phồng có thể làm vỏ hở hoặc touchpad nhô lên.", "Sau khi vào Windows, đối chiếu thêm Battery Health trong BIOS/HWiNFO."], "pass": "PASS khi kê tay phẳng, touchpad nằm đúng vị trí và click bình thường.", "fail": "FAIL nếu touchpad/kê tay bị đội rõ, vỏ hở hoặc có dấu hiệu pin phồng.", "tools": []}}, {"id": "04", "group": "bios", "title": "Vào BIOS F2 và đối chiếu Service Tag", "desc": "Service Tag trong BIOS phải trùng tem máy. Kiểm tra model Precision 7560, CPU Xeon W-11855M, dung lượng RAM và ổ lưu trữ.", "tip": "Service Tag lệch BIOS/tem máy → dừng mua và hỏi rõ nguồn gốc main.", "critical": true, "icon": "bi-upc-scan", "guide": {"steps": ["Khởi động/restart máy và bấm F2 liên tục khi logo Dell xuất hiện.", "Trong BIOS → Overview/System Information, ghi lại Service Tag (7 ký tự) và CPU.", "Đối chiếu Service Tag trong BIOS với tem đáy máy.", "Vào trang Dell Support/Warranty và nhập Service Tag để kiểm tra model, thông tin hỗ trợ và lịch sử bảo hành nếu còn.", "Trong Windows có thể mở PowerShell và chạy: Get-CimInstance Win32_BIOS | Select-Object SerialNumber để đối chiếu lần nữa."], "pass": "PASS khi Service Tag BIOS, tem máy và thông tin Dell khớp hợp lý với Precision 7560.", "fail": "FAIL/đòi giải thích nếu Service Tag BIOS khác tem máy, BIOS không có Service Tag hoặc Dell trả về model khác.", "tools": [["Dell: tìm Service Tag", "https://www.dell.com/support/contents/en-vn/article/product-support/self-support-knowledgebase/locate-service-tag/notebook", "official"], ["Dell Warranty", "https://www.dell.com/support/contractservices/en-vn/", "official"]]}}, {"id": "05", "group": "bios", "title": "Kiểm tra BIOS Password / Admin Password", "desc": "Không nên nhận máy nếu BIOS bị khóa bằng mật khẩu mà shop không thể gỡ hoặc cung cấp.", "tip": "", "critical": false, "icon": "bi-key", "guide": {"steps": ["Trong BIOS, thử truy cập các mục System Configuration/Security.", "Nếu BIOS yêu cầu Admin/System Password mà shop không cung cấp được, yêu cầu shop gỡ trước khi mua.", "Không tự thử mật khẩu nhiều lần hoặc reset BIOS trái phép.", "Đảm bảo bạn có thể thay đổi các thiết lập thông thường và BIOS không bị khóa quản trị ngoài ý muốn."], "pass": "PASS khi BIOS không bị khóa hoặc shop cung cấp/gỡ được mật khẩu hợp lệ.", "fail": "Không nên chốt nếu BIOS bị khóa mà shop không thể giải quyết rõ ràng.", "tools": []}}, {"id": "06", "group": "bios", "title": "F12 → Diagnostics → chạy test phần cứng", "desc": "Chạy Dell pre-boot diagnostics. Nếu xuất hiện Error Code / Validation Code, chụp lại và chưa thanh toán.", "tip": "Đây là test độc lập với Windows nên rất đáng tin để phát hiện lỗi phần cứng cơ bản.", "critical": true, "icon": "bi-activity", "guide": {"steps": ["Cắm adapter nguồn. Tắt máy hoặc restart.", "Ngay khi logo Dell xuất hiện, bấm F12 nhiều lần để mở One Time Boot Menu.", "Chọn Diagnostics. Để Quick Test chạy xong.", "Nếu cần test sâu, chọn Advanced Test/Thorough mode và ưu tiên Memory, Storage, Processor, Video/LCD.", "Nếu có lỗi, chụp lại Error Code và Validation Code trước khi thoát."], "pass": "PASS khi Dell Diagnostics báo All tests passed successfully và không có mã lỗi.", "fail": "FAIL nếu có Error Code/Validation Code liên quan CPU, RAM, SSD, Video, fan, battery hoặc main; chưa thanh toán trước khi shop xử lý.", "tools": [["Hướng dẫn Dell F12 Diagnostics", "https://www.dell.com/support/kbdoc/en-us/000181163/how-to-enter-the-built-in-diagnostics-32-bit-diagnostics-supportassist-epsa-epsa-and-psa", "official"]]}}, {"id": "07", "group": "bios", "title": "Kiểm tra ngày sản xuất, battery state và adapter trong BIOS", "desc": "Xem thông tin hệ thống, pin và adapter. Adapter phải được BIOS nhận đúng; không nên hiện Unknown/Not Installed.", "tip": "", "critical": false, "icon": "bi-info-circle", "guide": {"steps": ["Trong BIOS → Overview/System Information, kiểm CPU, RAM, SSD, dGPU nếu hiển thị.", "Vào Battery Information để xem Battery Health/State và mức pin.", "Kiểm AC Adapter Type/Adapter Status khi đang cắm sạc.", "Nếu BIOS có Diagnostics/Event Logs, xem có lỗi phần cứng lặp lại gần đây không."], "pass": "PASS khi các linh kiện nhận đúng, pin không báo lỗi nghiêm trọng và adapter được nhận đúng.", "fail": "FAIL nếu adapter Unknown/Not Installed, battery error hoặc BIOS log có lỗi phần cứng nghiêm trọng lặp lại.", "tools": []}}, {"id": "08", "group": "performance", "title": "CPU-Z / HWiNFO phải nhận đúng Xeon W-11855M", "desc": "Kiểm tra 6 nhân / 12 luồng. Quan sát clock, nhiệt độ idle và thông tin mainboard.", "tip": "", "critical": false, "icon": "bi-cpu", "guide": {"steps": ["Tải HWiNFO bản Portable hoặc Installer từ trang chính thức.", "Mở HWiNFO → Summary hoặc Sensors. CPU phải hiện Intel Xeon W-11855M.", "Kiểm số nhân/luồng là 6C/12T; xem nhiệt độ khi idle và khi tải.", "Mở Sensors trong lúc chạy Cinebench/OCCT để xem xung, nhiệt và cờ Thermal Throttling.", "Không đánh giá chỉ bằng một con số nhiệt độ peak; ưu tiên xem máy có giữ ổn định và không crash hay không."], "pass": "PASS khi CPU nhận đúng, đủ nhân/luồng và hoạt động ổn định dưới tải.", "fail": "FAIL nếu sai CPU, thiếu core/thread, BSOD, tự tắt hoặc throttle bất thường kéo dài.", "tools": [["HWiNFO chính thức", "https://www.hwinfo.com/download/", "official"], ["Cinebench", "https://www.maxon.net/en/downloads/cinebench-downloads", "official"]]}}, {"id": "09", "group": "performance", "title": "GPU-Z phải nhận đúng RTX A4000 Laptop GPU 8GB", "desc": "Kiểm tra tên GPU, dung lượng VRAM 8GB, driver và bus. Không chấp nhận sai model, thiếu VRAM hoặc driver lỗi.", "tip": "", "critical": true, "icon": "bi-gpu-card", "guide": {"steps": ["Mở GPU-Z. Tên GPU phải là NVIDIA RTX A4000 Laptop GPU hoặc tên tương ứng RTX A4000 mobile.", "Kiểm Memory Size phải là 8192 MB (8GB GDDR6).", "Kiểm driver đang nhận bình thường, không có lỗi Code 43 trong Device Manager.", "Có thể đối chiếu thêm trong HWiNFO/NVIDIA Control Panel.", "Trong GPU-Z bấm dấu ? cạnh Bus Interface và chạy Render Test nếu cần để kích hoạt GPU rời."], "pass": "PASS khi GPU nhận đúng RTX A4000, đủ 8GB VRAM và driver không lỗi.", "fail": "FAIL nếu sai GPU, thiếu VRAM, Code 43, driver crash hoặc card không tải được.", "tools": [["GPU-Z chính thức", "https://www.techpowerup.com/download/techpowerup-gpu-z/", "official"], ["HWiNFO", "https://www.hwinfo.com/download/", "official"]]}}, {"id": "10", "group": "performance", "title": "Stress GPU 15–20 phút", "desc": "Dùng OCCT / FurMark / benchmark tương đương. Không được có artifact, sọc, chấm màu, driver crash, màn đen hoặc restart.", "tip": "Artifact dù chỉ xuất hiện một lần cũng nên xem là red flag lớn.", "critical": true, "icon": "bi-fire", "guide": {"steps": ["Cắm sạc và đặt máy nơi thoáng. Mở HWiNFO Sensors để quan sát nhiệt/clock.", "Mở OCCT → chọn 3D Adaptive/GPU test. Chạy khoảng 15–20 phút ở cấu hình mặc định trước.", "Trong thời gian test, quan sát màn hình: không được có chấm màu, sọc, texture vỡ, màn đen hoặc nhấp nháy bất thường.", "Theo dõi OCCT error counter; lý tưởng là 0 error.", "Sau test, mở lại vài ứng dụng và kiểm tra driver NVIDIA có còn hoạt động bình thường."], "pass": "PASS khi test hết thời gian, 0 error, không artifact, không crash/restart và GPU hoạt động bình thường sau test.", "fail": "FAIL ngay nếu xuất hiện artifact, driver reset, màn đen, crash hoặc lỗi OCCT lặp lại.", "tools": [["OCCT Personal", "https://www.ocbase.com/download-personal", "official"]], "note": "Stress test làm máy nóng. Không che khe gió; dừng test nếu máy có mùi bất thường, tắt đột ngột hoặc xuất hiện artifact."}}, {"id": "11", "group": "performance", "title": "Stress CPU 10–15 phút", "desc": "Dùng Cinebench hoặc OCCT. Quan sát nhiệt, xung và độ ổn định. Tránh máy tự tắt, BSOD hoặc throttle bất thường kéo dài.", "tip": "", "critical": false, "icon": "bi-speedometer2", "guide": {"steps": ["Cắm sạc và mở HWiNFO Sensors.", "Dùng Cinebench CPU Multi Core hoặc OCCT CPU test trong khoảng 10–15 phút.", "Quan sát xung CPU, nhiệt, fan và Thermal Throttling.", "Điểm benchmark có thể dao động theo BIOS/power profile; mục tiêu chính là độ ổn định.", "Sau test, máy phải phản hồi bình thường, không BSOD hoặc treo."], "pass": "PASS khi CPU hoàn thành test ổn định, không lỗi tính toán, không BSOD/tắt máy.", "fail": "FAIL nếu crash, BSOD, tắt nguồn hoặc hiệu năng tụt cực mạnh liên tục dù quạt/tản nhiệt hoạt động.", "tools": [["Cinebench chính thức", "https://www.maxon.net/en/downloads/cinebench-downloads", "official"], ["OCCT CPU Test", "https://www.ocbase.com/download-personal", "official"]]}}, {"id": "12", "group": "performance", "title": "Stress CPU + GPU đồng thời 10 phút", "desc": "Đây là bài test quan trọng cho nguồn, VRM và hệ thống tản nhiệt. Máy không được reset, mất nguồn hoặc tụt hiệu năng bất thường.", "tip": "", "critical": true, "icon": "bi-lightning-charge", "guide": {"steps": ["Chỉ chạy sau khi CPU test và GPU test riêng đều PASS.", "Cắm đúng adapter, mở HWiNFO Sensors.", "Trong OCCT chọn Power test hoặc workload kết hợp CPU+GPU; chạy khoảng 10 phút.", "Theo dõi xem adapter có bị ngắt, máy reset, màn đen hoặc clock tụt bất thường kéo dài không.", "Sau khi kết thúc, để máy idle 2–3 phút xem nhiệt độ giảm và hệ thống phục hồi bình thường."], "pass": "PASS khi máy ổn định toàn bộ bài test, không reset, không mất nguồn và không có lỗi OCCT.", "fail": "FAIL nếu máy sập nguồn/restart, adapter ngắt, driver GPU crash hoặc xuất hiện lỗi phần cứng.", "tools": [["OCCT Power Test", "https://www.ocbase.com/download-personal", "official"]], "note": "Power test là tải nặng nhất. Chỉ chạy khi shop đồng ý và máy đang dùng adapter đúng công suất."}}, {"id": "13", "group": "performance", "title": "Kiểm RAM 16GB và ECC / Non-ECC", "desc": "Dùng HWiNFO xem dung lượng, số thanh, tốc độ và loại RAM. Xeon hỗ trợ ECC nhưng máy thực tế có thể đang dùng RAM thường.", "tip": "Ưu tiên nâng 32GB sau khi mua nếu chạy VM / MATLAB / CAD nặng.", "critical": false, "icon": "bi-memory", "guide": {"steps": ["Mở HWiNFO → Memory/Memory Modules để xem dung lượng, số thanh và tốc độ.", "Xác nhận tổng RAM 16GB; ghi lại đang là 1×16GB hay 2×8GB để biết phương án nâng 32GB.", "Tìm mục ECC/Memory Error Correction nếu HWiNFO hiển thị. Xeon hỗ trợ ECC nhưng RAM lắp thực tế có thể là Non‑ECC.", "Chạy Windows Memory Diagnostic: Win+R → mdsched.exe → Restart now and check for problems.", "Nếu có thời gian, chạy Dell F12 Advanced Memory Test."], "pass": "PASS khi đủ 16GB, không lỗi memory test và RAM hoạt động đúng tốc độ hợp lý.", "fail": "FAIL nếu memory test báo lỗi hoặc dung lượng/tốc độ không đúng như shop cam kết.", "tools": [["HWiNFO", "https://www.hwinfo.com/download/", "official"], ["Dell Diagnostics", "https://www.dell.com/support/kbdoc/en-us/000181163/how-to-enter-the-built-in-diagnostics-32-bit-diagnostics-supportassist-epsa-epsa-and-psa", "official"]]}}, {"id": "14", "group": "display", "title": "Xác minh native resolution 3840×2160", "desc": "Windows → Settings → Display → Advanced display. Kiểm tra native resolution đúng 4K và tần số quét hoạt động ổn định.", "tip": "", "critical": true, "icon": "bi-badge-4k", "guide": {"steps": ["Windows → Settings → System → Display → Advanced display.", "Chọn màn hình tích hợp. Xác nhận Desktop mode/Active signal mode ở native 3840×2160.", "Kiểm refresh rate khả dụng và xem hình ảnh có ổn định không.", "Mở TestUFO để kiểm chuyển động/refresh thực tế; dùng Chrome/Edge và đóng tab nặng khác."], "pass": "PASS khi Windows nhận native 3840×2160 và màn hoạt động ổn định ở refresh rate hỗ trợ.", "fail": "XEM LẠI nếu shop quảng cáo 4K nhưng native resolution không phải 3840×2160 hoặc màn chớp/mất tín hiệu.", "tools": [["TestUFO Refresh Rate", "https://testufo.com/", "online"]]}}, {"id": "15", "group": "display", "title": "Test dead pixel / stuck pixel", "desc": "Mở fullscreen nền trắng, đen, đỏ, xanh lá, xanh dương và xám. Tìm điểm chết, điểm sáng hoặc pixel kẹt.", "tip": "", "critical": false, "icon": "bi-grid-3x3-gap", "guide": {"steps": ["Lau sạch màn hình trước để tránh nhầm bụi với dead pixel.", "Mở DeadPixelTest và chuyển fullscreen.", "Lần lượt xem nền trắng, đen, đỏ, xanh lá, xanh dương và xám.", "Quan sát toàn bộ màn từ khoảng cách gần, nhất là vùng giữa và 4 góc.", "Dead pixel thường tối cố định; stuck pixel có thể sáng một màu cố định."], "pass": "PASS khi không có pixel chết/kẹt đáng chú ý và không có cụm lỗi.", "fail": "Thương lượng/đổi máy nếu có nhiều dead/stuck pixel, đặc biệt ở vùng trung tâm.", "tools": [["Dead Pixel Test", "https://deadpixeltest.org/", "online"]]}}, {"id": "16", "group": "display", "title": "Kiểm ám màu, hở sáng và pressure mark", "desc": "Quan sát đặc biệt ở mép màn hình và các vùng nền đồng màu. Màn 4K thay ngoài có thể khác chất lượng panel gốc.", "tip": "", "critical": false, "icon": "bi-brightness-high", "guide": {"steps": ["Ở phòng hơi tối, mở nền đen fullscreen để quan sát hở sáng ở 4 cạnh/góc.", "Mở nền xám để tìm ám màu, vùng loang, pressure mark hoặc vùng sáng tối bất thường.", "Dùng nền trắng để kiểm độ đồng đều và các vết ố.", "Thay đổi góc nhìn nhẹ để phân biệt IPS glow bình thường với hở sáng/pressure mark cố định."], "pass": "PASS khi màu tương đối đồng đều, không có vùng loang/pressure mark rõ trong sử dụng bình thường.", "fail": "FAIL/XEM LẠI nếu có mảng ám màu lớn, sọc, pressure mark hoặc hở sáng nghiêm trọng.", "tools": [["Dead Pixel / Solid Colors", "https://deadpixeltest.org/", "online"]]}}, {"id": "17", "group": "display", "title": "Tăng / giảm brightness 0–100%", "desc": "Đảm bảo không nhấp nháy, không xuất hiện vùng tối bất thường và độ sáng thay đổi đều.", "tip": "", "critical": false, "icon": "bi-sun", "guide": {"steps": ["Kéo brightness từ 0% → 25% → 50% → 75% → 100%.", "Ở mỗi mức, chờ vài giây và quan sát có flicker/nhấp nháy, mất sáng hoặc đổi màu bất thường không.", "Test khi cắm sạc và rút sạc để xem brightness có hành xử bình thường.", "Mở một trang nền trắng/xám để dễ phát hiện dao động sáng."], "pass": "PASS khi độ sáng thay đổi đều, không nhấp nháy hoặc tắt sáng bất thường.", "fail": "FAIL nếu backlight chập chờn, màn tối bất thường ở một vùng hoặc mất sáng khi thay đổi mức.", "tools": [["Screen Test", "https://deadpixeltest.org/", "online"]]}}, {"id": "18", "group": "battery", "title": "CrystalDiskInfo → SSD phải Good", "desc": "Kiểm SMART, health, power-on hours, total host writes, nhiệt độ và Critical Warning. SSD có warning thì nên yêu cầu thay.", "tip": "", "critical": false, "icon": "bi-device-ssd", "guide": {"steps": ["Mở CrystalDiskInfo và chọn đúng SSD NVMe 512GB.", "Health Status nên là Good; kiểm Critical Warning, Temperature, Power On Hours và Total Host Writes.", "Ghi lại model SSD để biết có đúng dung lượng/tốc độ shop quảng cáo.", "Nếu Health thấp hoặc có cảnh báo, yêu cầu thay SSD hoặc giảm giá tương ứng.", "Không dựa duy nhất vào phần trăm Health vì cách tính tùy hãng SSD; Critical Warning/SMART error quan trọng hơn."], "pass": "PASS khi Health Good, không Critical Warning/SMART error và ổ hoạt động ổn định.", "fail": "FAIL/XEM LẠI nếu Bad/Caution, Critical Warning khác 0, lỗi SMART hoặc nhiệt/hoạt động bất thường.", "tools": [["CrystalDiskInfo", "https://crystalmark.info/en/software/CrystalDiskInfo/", "official"]]}}, {"id": "19", "group": "battery", "title": "Battery Report", "desc": "Mở CMD và chạy powercfg /batteryreport . So sánh Design Capacity với Full Charge Capacity.", "tip": "", "critical": false, "icon": "bi-battery-half", "guide": {"steps": ["Mở Command Prompt/PowerShell với quyền bình thường và chạy: powercfg /batteryreport", "Windows sẽ báo đường dẫn file battery-report.html; mở file đó bằng trình duyệt.", "So sánh Design Capacity với Full Charge Capacity. Tính nhanh: Full Charge / Design × 100%.", "Xem Cycle Count nếu có và Recent usage để phát hiện tụt pin bất thường.", "Với máy 2021, pin hao mòn là bình thường; quan trọng là không phồng, không tụt cực nhanh và giá máy phản ánh tình trạng pin."], "pass": "PASS khi pin hoạt động ổn định; Full Charge Capacity còn hợp lý với tuổi máy và không có triệu chứng pin phồng/tắt nguồn.", "fail": "XEM LẠI nếu pin health quá thấp, tụt pin cực nhanh, không nhận pin hoặc có dấu hiệu phồng.", "tools": [["HWiNFO Battery Info", "https://www.hwinfo.com/download/", "official"]], "note": "Mốc % pin chỉ nên dùng như tham khảo: >80% tốt, khoảng 60–80% chấp nhận được với máy cũ nếu giá hợp lý; thấp hơn nên dự trù thay pin."}}, {"id": "20", "group": "battery", "title": "Rút sạc test thực tế 10–15 phút", "desc": "Mở video + trình duyệt, brightness khoảng 60–70%. Pin không nên tụt bất thường hoặc máy tắt ngay khi rút sạc.", "tip": "", "critical": false, "icon": "bi-battery", "guide": {"steps": ["Sạc pin lên ít nhất khoảng 50%.", "Rút adapter, đặt brightness 60–70%, bật Wi‑Fi và mở video 1080p + vài tab trình duyệt.", "Theo dõi 10–15 phút: phần trăm pin phải giảm tương đối đều, không nhảy số hoặc tắt đột ngột.", "Cắm sạc lại và kiểm máy nhận adapter ngay, biểu tượng pin chuyển sang charging.", "Không dùng test ngắn này để ước lượng chính xác thời lượng pin; mục tiêu là phát hiện pin lỗi rõ."], "pass": "PASS khi máy chạy ổn khi rút sạc và nhận sạc lại bình thường.", "fail": "FAIL nếu tắt ngay khi rút sạc, pin nhảy % lớn hoặc không nhận sạc ổn định.", "tools": []}}, {"id": "21", "group": "battery", "title": "Adapter phải được BIOS nhận đúng", "desc": "Không nên nhận máy nếu BIOS báo Unknown/Not Installed khi đang cắm adapter. Yêu cầu đúng adapter phù hợp cấu hình máy.", "tip": "", "critical": true, "icon": "bi-plug", "guide": {"steps": ["Cắm adapter vào máy rồi restart vào BIOS bằng F2.", "Tìm AC Adapter Type/Adapter Information. BIOS phải nhận adapter, không được báo Unknown/Not Installed.", "Quan sát đầu cắm và dây adapter, không lỏng, cháy xém hoặc nóng bất thường.", "Trong Windows, chạy CPU/GPU stress và xem máy có báo 'plugged in, not charging' bất thường hoặc tụt pin dù cắm sạc không."], "pass": "PASS khi BIOS nhận đúng adapter và máy không tụt pin/giới hạn bất thường dưới tải.", "fail": "FAIL/XEM LẠI nếu BIOS báo Unknown, jack chập chờn hoặc pin tụt nhanh khi đang cắm sạc.", "tools": [["Dell Diagnostics", "https://www.dell.com/support/kbdoc/en-us/000181163/how-to-enter-the-built-in-diagnostics-32-bit-diagnostics-supportassist-epsa-epsa-and-psa", "official"]]}}, {"id": "22", "group": "ports", "title": "Test toàn bộ bàn phím + numpad + đèn nền", "desc": "Dùng keyboard tester. Kiểm Ctrl, Shift, Alt, Fn, F1–F12, Enter, Backspace, mũi tên và numpad.", "tip": "", "critical": false, "icon": "bi-keyboard", "guide": {"steps": ["Mở Keyboard Test online.", "Bấm từng phím từ Esc, F1–F12, hàng số, chữ cái, Shift/Ctrl/Alt, Space, Enter, Backspace, mũi tên và numpad.", "Bấm mỗi phím vài lần để phát hiện double-key hoặc phím chập chờn.", "Test Fn + các phím chức năng (brightness, volume, keyboard backlight) trực tiếp trên máy.", "Nếu có phím không hiện trên web do browser giữ shortcut, kiểm bằng Notepad hoặc công cụ thứ hai."], "pass": "PASS khi tất cả phím nhận ổn định, không double-key/mất phím và đèn nền hoạt động.", "fail": "FAIL/XEM LẠI nếu phím chết, double-key hoặc cụm phím chức năng không hoạt động.", "tools": [["Keyboard Test", "https://webcammictest.com/keyboard/", "online"], ["KeyboardTester", "https://www.keyboardtester.com/", "online"]]}}, {"id": "23", "group": "ports", "title": "Test touchpad, webcam, mic và loa", "desc": "Kiểm multi-touch, scroll hai ngón, click trái/phải, camera, ghi âm microphone và loa ở âm lượng cao.", "tip": "", "critical": false, "icon": "bi-camera-video", "guide": {"steps": ["Touchpad: di chuyển con trỏ khắp bề mặt, click trái/phải, scroll hai ngón, pinch zoom và drag.", "Webcam: mở Webcam Test, cho phép quyền Camera, kiểm hình ảnh, FPS và độ ổn định.", "Mic: mở Mic Test, cho phép quyền Microphone, nói thử và nghe playback.", "Loa/tai nghe: mở Headphone Test để phát Left/Right; kiểm cả hai loa không rè ở âm lượng 70–100%.", "Cắm tai nghe 3.5mm nếu có để test jack audio."], "pass": "PASS khi touchpad, webcam, mic và hai kênh loa hoạt động ổn, không rè/mất tiếng.", "fail": "FAIL/XEM LẠI nếu camera/mic không nhận, loa rè mạnh hoặc touchpad có vùng chết.", "tools": [["Webcam Test", "https://webcammictest.com/", "online"], ["Mic Test", "https://mictests.com/", "online"], ["Speaker L/R Test", "https://webcammictest.com/headphones/", "online"], ["Mouse/Touchpad Test", "https://webcammictest.com/mouse/", "online"]]}}, {"id": "24", "group": "ports", "title": "Test USB-A, USB-C/Thunderbolt, HDMI, LAN, audio, SD", "desc": "Mang theo USB và nếu có thể là màn hình ngoài / cáp HDMI. Cổng không được lúc nhận lúc không.", "tip": "", "critical": false, "icon": "bi-usb-drive", "guide": {"steps": ["Mang theo USB-A và nếu có USB-C. Copy một file vài trăm MB qua từng cổng để kiểm kết nối ổn định.", "Test HDMI hoặc USB-C/Thunderbolt với màn hình ngoài nếu shop có sẵn.", "Cắm dây LAN vào RJ45 và kiểm link/speed trong Windows.", "Test jack 3.5mm bằng tai nghe; test khe SD bằng thẻ nhớ nếu có.", "Vừa cắm vừa rung nhẹ đầu cáp; cổng không nên mất kết nối chập chờn."], "pass": "PASS khi tất cả cổng cần dùng nhận thiết bị ổn định và không ngắt kết nối khi chạm nhẹ.", "fail": "FAIL/XEM LẠI nếu cổng lỏng, mất kết nối, không xuất hình hoặc không nhận thiết bị.", "tools": []}}, {"id": "25", "group": "ports", "title": "Test Wi‑Fi, Bluetooth, Sleep/Wake và Restart", "desc": "Kết nối Wi‑Fi, pair Bluetooth, sleep/wake vài lần và restart. Kiểm tra Device Manager không có dấu chấm than vàng.", "tip": "", "critical": false, "icon": "bi-wifi", "guide": {"steps": ["Wi‑Fi: kết nối mạng shop và chạy speed test 2–3 lần; so với điện thoại cùng mạng để phát hiện card/anten bất thường.", "Bluetooth: pair tai nghe hoặc điện thoại, phát âm thanh vài phút.", "Sleep/Wake: cho máy Sleep rồi đánh thức 3 lần; không được màn đen hoặc mất Wi‑Fi/GPU.", "Restart máy 2–3 lần.", "Mở Device Manager và kiểm không có Unknown Device/dấu chấm than vàng."], "pass": "PASS khi Wi‑Fi/Bluetooth ổn định, sleep/wake/restart bình thường và Device Manager sạch lỗi.", "fail": "FAIL/XEM LẠI nếu Wi‑Fi rớt liên tục, Bluetooth lỗi, resume màn đen hoặc Device Manager có lỗi phần cứng/driver.", "tools": [["Internet Speed Test", "https://webcammictest.com/internet/", "online"]]}}, {"id": "28", "group": "windows", "title": "Settings → System → Activation phải hiển thị Windows đã được kích hoạt", "desc": "Kiểm tra đúng Edition (ưu tiên Windows Pro/Pro for Workstations nếu shop cam kết) và trạng thái Activation. Digital License là hình thức kích hoạt hợp lệ; nếu liên kết tài khoản Microsoft thì Windows sẽ ghi rõ điều đó.", "tip": "“Activated” chưa đủ để kết luận bản quyền nguồn gốc hợp lệ — phải kiểm thêm license channel bên dưới.", "critical": true, "icon": "bi-windows", "guide": {"steps": ["Nhấn Win + I → System → Activation.", "Ghi lại Windows edition đang cài (ví dụ Windows 11 Pro) và Activation state.", "Trạng thái nên là 'Windows is activated with a digital license' hoặc '...digital license linked to your Microsoft account'.", "Nếu shop đăng nhập tài khoản Microsoft cá nhân của họ, không nên lấy việc đó làm bằng chứng bản quyền cho bạn; hãy kiểm license channel bằng slmgr.", "Chụp ảnh trang Activation để lưu cùng hồ sơ test máy."], "pass": "PASS khi Windows báo Activated và edition phù hợp với giấy phép/máy. Tiếp tục kiểm slmgr /dlv để xác định channel.", "fail": "FAIL/XEM LẠI nếu Windows Not activated, có lỗi activation hoặc edition shop cam kết không khớp.", "tools": [["Microsoft Activation", "https://support.microsoft.com/vi-vn/windows/activation/activate-windows", "official"]], "note": "Microsoft nêu rõ Activation chỉ xác nhận khóa/bản quyền số hợp lệ với cấu hình phần cứng; trạng thái Activated không tự nó chứng minh toàn bộ nguồn gốc bản quyền."}}, {"id": "29", "group": "windows", "title": "Chạy slmgr /xpr để kiểm trạng thái kích hoạt lâu dài", "desc": "Lệnh này cho biết Windows đang được kích hoạt vĩnh viễn hay có ngày hết hạn. KMS client thường có thời hạn kích hoạt và gia hạn định kỳ.", "tip": "", "critical": true, "icon": "bi-hourglass-split", "guide": {"steps": ["Nhấn Win + R, gõ cmd rồi Enter. Không cần quyền Administrator cho lệnh kiểm tra này.", "Nhập: slmgr /xpr", "Chờ hộp thoại Windows Script Host xuất hiện.", "Nếu hiện 'The machine is permanently activated' thì activation hiện tại không có ngày hết hạn.", "Nếu hiển thị ngày/giờ hết hạn, ghi lại và kiểm tiếp slmgr /dlv để xem có phải KMS/Volume client hay không."], "pass": "PASS khi máy báo permanently activated VÀ bước slmgr /dlv cho thấy channel hợp lý với nguồn gốc máy.", "fail": "XEM LẠI nếu có expiration date trên máy bán cho cá nhân, đặc biệt nếu channel là VOLUME_KMSCLIENT.", "tools": [["Microsoft: slmgr options", "https://learn.microsoft.com/en-us/windows-server/get-started/activation-slmgr-vbs-options", "official"]]}}, {"id": "30", "group": "windows", "title": "Chạy slmgr /dlv và kiểm Product Key Channel", "desc": "Phân biệt Retail/OEM với Volume/KMS. Nếu thấy VOLUME_KMSCLIENT , KMS server hoặc activation interval thì phải hỏi rõ nguồn gốc bản quyền trước khi mua.", "tip": "Máy doanh nghiệp cũ có thể từng dùng KMS hợp pháp trong công ty, nhưng khi bán cho cá nhân cần làm rõ quyền sử dụng sau chuyển nhượng.", "critical": true, "icon": "bi-key-fill", "guide": {"steps": ["Nhấn Win + R → gõ cmd → Enter.", "Nhập: slmgr /dlv", "Trong hộp thoại, tìm Description / Product Key Channel / License Status / KMS machine name nếu có.", "Retail hoặc OEM channel thường phù hợp hơn với máy bán lẻ/cá nhân. OEM_DM thường liên quan key OEM nhúng firmware.", "Nếu thấy VOLUME_KMSCLIENT, KMS server, activation interval hoặc renewal interval: chụp ảnh và hỏi shop nguồn gốc license.", "Nếu máy từng thuộc doanh nghiệp và dùng KMS hợp pháp, yêu cầu shop cung cấp phương án license hợp lệ sau khi bán cho cá nhân thay vì để phụ thuộc KMS của đơn vị cũ."], "pass": "PASS khi License Status = Licensed và channel phù hợp (thường Retail/OEM đối với máy bán cho cá nhân), không phụ thuộc KMS không rõ nguồn gốc.", "fail": "FAIL/XEM LẠI nếu dùng VOLUME_KMSCLIENT/KMS server không rõ nguồn gốc, license notification/unlicensed hoặc shop né tránh giải thích.", "tools": [["Microsoft: /dlv & /xpr", "https://learn.microsoft.com/en-us/windows-server/get-started/activation-slmgr-vbs-options", "official"]], "note": "Không đánh giá 'KMS = lậu' một cách tuyệt đối: KMS là cơ chế hợp pháp cho tổ chức có Volume Licensing. Vấn đề là quyền sử dụng đó có hợp lệ và còn áp dụng sau khi máy được bán cho bạn hay không."}}, {"id": "31", "group": "windows", "title": "Kiểm OEM key nhúng trong firmware/BIOS bằng PowerShell", "desc": "Dùng CIM để đọc OA3xOriginalProductKey. Có key OEM trong firmware là một dấu hiệu tốt, nhưng ô trống không tự động đồng nghĩa Windows lậu vì máy có thể dùng Digital License theo cơ chế khác.", "tip": "", "critical": false, "icon": "bi-hdd-rack", "guide": {"steps": ["Mở Windows PowerShell.", "Chạy: (Get-CimInstance -ClassName SoftwareLicensingService).OA3xOriginalProductKey", "Nếu xuất hiện key 25 ký tự, chỉ chụp 5 ký tự cuối hoặc che phần lớn key khi lưu ảnh để tránh lộ khóa sản phẩm.", "Nếu kết quả trống, không vội kết luận Windows không bản quyền; máy có thể dùng Digital License hoặc cơ chế OEM khác.", "Đối chiếu tiếp Settings → Activation và slmgr /dlv."], "pass": "PASS khi có OEM key hợp lý hoặc Digital License/channel khác được xác minh rõ.", "fail": "Không dùng riêng mục này để FAIL máy. Chỉ đánh dấu XEM LẠI khi kết quả trống và các bước activation/channel khác cũng bất thường.", "tools": [["Microsoft Activation", "https://support.microsoft.com/vi-vn/windows/activation/activate-windows", "official"]]}}, {"id": "32", "group": "windows", "title": "Đối chiếu Edition và kiểu license với cấu hình máy", "desc": "Kiểm Windows 10/11 Pro, Pro for Workstations hoặc edition đang cài. Edition cài đặt phải phù hợp với giấy phép mà máy có quyền sử dụng.", "tip": "", "critical": false, "icon": "bi-pc-display", "guide": {"steps": ["Nhấn Win + R → gõ winver → Enter để xem edition/version/build.", "Vào Settings → System → Activation để xác nhận lại Edition.", "Có thể mở CMD và chạy: DISM /Online /Get-CurrentEdition", "Đối chiếu với nội dung shop cam kết. Ví dụ shop bán Windows Pro thì không nên đang cài Home rồi nói sẽ 'nâng sau'.", "Nếu dự định cài lại Windows, phải cài đúng edition được license hỗ trợ để tự kích hoạt lại."], "pass": "PASS khi edition đang cài khớp với license/shop cam kết và activation hoạt động bình thường.", "fail": "XEM LẠI nếu edition không khớp, activation chỉ hoạt động sau script lạ hoặc shop không giải thích được license entitlement.", "tools": [["Microsoft Activation / Edition", "https://support.microsoft.com/vi-vn/windows/activation/activate-windows", "official"]]}}, {"id": "33", "group": "windows", "title": "Kiểm dấu hiệu crack/KMS không rõ nguồn gốc", "desc": "Không nên chỉ tin watermark biến mất hoặc dòng “Activated”. Kiểm Scheduled Tasks/Services, Windows Security và lịch sử activation nếu có dấu hiệu dùng activator không rõ nguồn gốc.", "tip": "", "critical": false, "icon": "bi-shield-exclamation", "guide": {"steps": ["Mở Windows Security → Virus & threat protection → Protection history, xem có activator/crack/keygen bị phát hiện hay không.", "Mở Task Scheduler và Services chỉ để quan sát; tìm tên KMS/AutoKMS/KMSpico hoặc tác vụ kích hoạt định kỳ đáng ngờ.", "Mở CMD và chạy slmgr /dlv để xem có KMS server/Volume channel hay không.", "Không xóa hoặc chỉnh dịch vụ tại shop; nếu thấy dấu hiệu activator, yêu cầu shop cài sạch Windows từ nguồn Microsoft và kích hoạt bằng license hợp lệ trước khi nhận máy.", "Sau khi mua, nếu muốn chắc chắn nhất, có thể cài sạch Windows từ Microsoft rồi kiểm xem máy có tự activate lại đúng edition hay không."], "pass": "PASS khi không có dấu hiệu activator không rõ nguồn gốc và activation/channel hợp lý.", "fail": "FAIL/XEM LẠI nếu có AutoKMS/KMSpico/activator, tác vụ gia hạn đáng ngờ hoặc Windows Security từng cách ly công cụ crack.", "tools": [["Microsoft Windows Download", "https://www.microsoft.com/software-download/windows11", "official"], ["Microsoft Activation", "https://support.microsoft.com/vi-vn/windows/activation/activate-windows", "official"]]}}, {"id": "26", "group": "warranty", "title": "Yêu cầu ghi rõ phạm vi bảo hành", "desc": "Hóa đơn/phiếu bảo hành nên ghi rõ mainboard, GPU RTX A4000, màn hình, RAM, SSD và nguồn. Hỏi thời gian xử lý và điều kiện đổi máy.", "tip": "", "critical": true, "icon": "bi-file-earmark-check", "guide": {"steps": ["Yêu cầu shop ghi thời gian bảo hành và ngày bắt đầu rõ trên hóa đơn/phiếu.", "Hỏi trực tiếp: mainboard, RTX A4000, màn 4K, RAM, SSD, pin và adapter hỏng thì phạm vi xử lý thế nào.", "Hỏi điều kiện đổi máy nếu lỗi nặng trong những ngày đầu.", "Ghi rõ serial/Service Tag máy trên hóa đơn nếu shop hỗ trợ.", "Dùng Service Tag kiểm tra Dell warranty/service history; bảo hành shop là chính với máy đã hết Dell warranty."], "pass": "PASS khi điều khoản bảo hành rõ, có chứng từ và bao phủ main/GPU/màn phù hợp giá trị máy.", "fail": "XEM LẠI nếu shop chỉ nói miệng, loại trừ main/GPU/màn hoặc không ghi được máy cụ thể trên chứng từ.", "tools": [["Dell Warranty / Service", "https://www.dell.com/support/contractservices/en-vn/", "official"]]}}, {"id": "27", "group": "warranty", "title": "Chỉ thanh toán khi các hạng mục quan trọng đều PASS", "desc": "F12 Diagnostics, Service Tag, RTX A4000 stress, CPU+GPU stress, màn 4K, SSD/pin và phạm vi bảo hành phải đạt yêu cầu.", "tip": "Nếu main / GPU / màn có dấu hiệu đáng ngờ → bỏ máy, không thương lượng bằng vài trăm nghìn.", "critical": true, "icon": "bi-bag-check", "guide": {"steps": ["Đảm bảo các mục bắt buộc: Service Tag, F12 Diagnostics, GPU-Z, GPU stress, CPU+GPU stress, màn 4K, adapter và bảo hành đều PASS.", "Xem lại số mục WARN/FAIL ở thanh tiến độ.", "Chụp ảnh BIOS, GPU-Z, HWiNFO, CrystalDiskInfo và phiếu bảo hành để lưu.", "Nếu GPU/main/màn có dấu hiệu lỗi, ưu tiên đổi sang máy khác thay vì giảm giá.", "Nếu toàn bộ mục quan trọng PASS, kiểm tra lần cuối phụ kiện, adapter và bàn giao trước khi thanh toán."], "pass": "Có thể chốt khi các mục bắt buộc PASS, không có lỗi phần cứng nghiêm trọng và bảo hành rõ ràng.", "fail": "Không nên chốt nếu có FAIL ở GPU, main/F12 Diagnostics, màn hình, nguồn/adapter hoặc điều khoản bảo hành không rõ.", "tools": []}}];
+    const ITEMS = [{"id": "01", "group": "physical", "title": "Kiểm tra khung vỏ, 4 góc và đáy máy", "desc": "Tìm dấu móp, cong khung, khe vỏ hở, nứt, vết va đập mạnh. Quan sát ốc đáy: ốc toét nhiều hoặc thiếu ốc cho thấy máy từng tháo sửa nhiều.", "tip": "Không đánh giá chỉ theo % ngoại hình shop ghi.", "critical": false, "icon": "bi-laptop", "guide": {"steps": ["Đặt máy trên mặt bàn phẳng, quan sát từ trước/sau/trái/phải để phát hiện khung bị vênh.", "Soi kỹ 4 góc, mép màn, kê tay và đáy máy; tìm dấu móp mạnh, nứt, hở ron hoặc khe vỏ không đều.", "Quan sát đầu ốc đáy. Một vài dấu tháo là bình thường ở máy cũ, nhưng nhiều ốc toét/khác loại hoặc thiếu ốc là dấu hiệu cần hỏi lịch sử sửa chữa.", "Kiểm tra tem Service Tag ở đáy máy còn nguyên và đọc được."], "pass": "PASS khi khung thẳng, vỏ ráp khít, không nứt/móp nghiêm trọng, ốc đầy đủ và không có dấu hiệu tháo sửa cẩu thả.", "fail": "XEM LẠI/FAIL nếu khung cong, khe vỏ hở lớn, bản lề kéo bung vỏ hoặc ốc/main có dấu hiệu can thiệp bất thường.", "tools": []}}, {"id": "02", "group": "physical", "title": "Test bản lề và viền màn hình", "desc": "Mở/đóng màn hình nhiều lần. Bản lề phải chắc, không phát tiếng rắc, không lệch, không khiến viền màn hở hoặc màn tự tụt.", "tip": "", "critical": false, "icon": "bi-display", "guide": {"steps": ["Mở màn từ đóng hoàn toàn lên khoảng 30°, 90°, 120° rồi gần tối đa; thao tác chậm và đều.", "Đóng/mở 5–10 lần, quan sát bản lề hai bên có chuyển động đồng đều không.", "Dùng một tay giữ thân máy, rung nhẹ màn ở góc 90°; không nên có độ rơ quá lớn.", "Trong lúc mở/đóng, quan sát viền màn có bị tách, kêu rắc hoặc nhấp nháy hình ảnh không."], "pass": "PASS khi bản lề chắc, lực mở đều, màn giữ được góc và không gây nhấp nháy/tách viền.", "fail": "FAIL nếu nghe tiếng nứt/rắc, bản lề lệch, vỏ bung hoặc màn mất tín hiệu khi thay đổi góc.", "tools": []}}, {"id": "03", "group": "physical", "title": "Quan sát touchpad / kê tay có dấu hiệu pin phồng", "desc": "Touchpad bị đội lên, click không đều hoặc khe kê tay bị hở có thể là dấu hiệu pin phồng.", "tip": "", "critical": false, "icon": "bi-battery", "guide": {"steps": ["Nhìn ngang phần kê tay và touchpad để phát hiện bề mặt bị đội lên.", "Bấm 4 góc touchpad; lực click nên tương đối đều và touchpad không bị kẹt.", "Quan sát khe giữa đáy máy và kê tay. Pin phồng có thể làm vỏ hở hoặc touchpad nhô lên.", "Sau khi vào Windows, đối chiếu thêm Battery Health trong BIOS/HWiNFO."], "pass": "PASS khi kê tay phẳng, touchpad nằm đúng vị trí và click bình thường.", "fail": "FAIL nếu touchpad/kê tay bị đội rõ, vỏ hở hoặc có dấu hiệu pin phồng.", "tools": []}}, {"id": "04", "group": "bios", "title": "Vào BIOS F2 và đối chiếu Service Tag", "desc": "Service Tag trong BIOS phải trùng tem máy. Kiểm tra model Precision 7560, CPU Xeon W-11855M, dung lượng RAM và ổ lưu trữ.", "tip": "Service Tag lệch BIOS/tem máy → dừng mua và hỏi rõ nguồn gốc main.", "critical": true, "icon": "bi-upc-scan", "guide": {"steps": ["Khởi động/restart máy và bấm F2 liên tục khi logo Dell xuất hiện.", "Trong BIOS → Overview/System Information, ghi lại Service Tag (7 ký tự) và CPU.", "Đối chiếu Service Tag trong BIOS với tem đáy máy.", "Vào trang Dell Support/Warranty và nhập Service Tag để kiểm tra model, thông tin hỗ trợ và lịch sử bảo hành nếu còn.", "Trong Windows có thể mở PowerShell và chạy: Get-CimInstance Win32_BIOS | Select-Object SerialNumber để đối chiếu lần nữa."], "pass": "PASS khi Service Tag BIOS, tem máy và thông tin Dell khớp hợp lý với Precision 7560.", "fail": "FAIL/đòi giải thích nếu Service Tag BIOS khác tem máy, BIOS không có Service Tag hoặc Dell trả về model khác.", "tools": [["Dell: tìm Service Tag", "https://www.dell.com/support/contents/en-vn/article/product-support/self-support-knowledgebase/locate-service-tag/notebook", "official"], ["Dell Warranty", "https://www.dell.com/support/contractservices/en-vn/", "official"]]}}, {"id": "05", "group": "bios", "title": "Kiểm tra BIOS Password / Admin Password", "desc": "Không nên nhận máy nếu BIOS bị khóa bằng mật khẩu mà shop không thể gỡ hoặc cung cấp.", "tip": "", "critical": false, "icon": "bi-key", "guide": {"steps": ["Trong BIOS, thử truy cập các mục System Configuration/Security.", "Nếu BIOS yêu cầu Admin/System Password mà shop không cung cấp được, yêu cầu shop gỡ trước khi mua.", "Không tự thử mật khẩu nhiều lần hoặc reset BIOS trái phép.", "Đảm bảo bạn có thể thay đổi các thiết lập thông thường và BIOS không bị khóa quản trị ngoài ý muốn."], "pass": "PASS khi BIOS không bị khóa hoặc shop cung cấp/gỡ được mật khẩu hợp lệ.", "fail": "Không nên chốt nếu BIOS bị khóa mà shop không thể giải quyết rõ ràng.", "tools": []}}, {"id": "06", "group": "bios", "title": "F12 → Diagnostics → chạy test phần cứng", "desc": "Chạy Dell pre-boot diagnostics. Nếu xuất hiện Error Code / Validation Code, chụp lại và chưa thanh toán.", "tip": "Đây là test độc lập với Windows nên rất đáng tin để phát hiện lỗi phần cứng cơ bản.", "critical": true, "icon": "bi-activity", "guide": {"steps": ["Cắm adapter nguồn. Tắt máy hoặc restart.", "Ngay khi logo Dell xuất hiện, bấm F12 nhiều lần để mở One Time Boot Menu.", "Chọn Diagnostics. Để Quick Test chạy xong.", "Nếu cần test sâu, chọn Advanced Test/Thorough mode và ưu tiên Memory, Storage, Processor, Video/LCD.", "Nếu có lỗi, chụp lại Error Code và Validation Code trước khi thoát."], "pass": "PASS khi Dell Diagnostics báo All tests passed successfully và không có mã lỗi.", "fail": "FAIL nếu có Error Code/Validation Code liên quan CPU, RAM, SSD, Video, fan, battery hoặc main; chưa thanh toán trước khi shop xử lý.", "tools": [["Hướng dẫn Dell F12 Diagnostics", "https://www.dell.com/support/kbdoc/en-us/000181163/how-to-enter-the-built-in-diagnostics-32-bit-diagnostics-supportassist-epsa-epsa-and-psa", "official"]]}}, {"id": "07", "group": "bios", "title": "Kiểm tra ngày sản xuất, battery state và adapter trong BIOS", "desc": "Xem thông tin hệ thống, pin và adapter. Adapter phải được BIOS nhận đúng; không nên hiện Unknown/Not Installed.", "tip": "", "critical": false, "icon": "bi-info-circle", "guide": {"steps": ["Trong BIOS → Overview/System Information, kiểm CPU, RAM, SSD, dGPU nếu hiển thị.", "Vào Battery Information để xem Battery Health/State và mức pin.", "Kiểm AC Adapter Type/Adapter Status khi đang cắm sạc.", "Nếu BIOS có Diagnostics/Event Logs, xem có lỗi phần cứng lặp lại gần đây không."], "pass": "PASS khi các linh kiện nhận đúng, pin không báo lỗi nghiêm trọng và adapter được nhận đúng.", "fail": "FAIL nếu adapter Unknown/Not Installed, battery error hoặc BIOS log có lỗi phần cứng nghiêm trọng lặp lại.", "tools": []}}, {"id": "08", "group": "performance", "title": "CPU-Z / HWiNFO phải nhận đúng Xeon W-11855M", "desc": "Kiểm tra 6 nhân / 12 luồng. Quan sát clock, nhiệt độ idle và thông tin mainboard.", "tip": "", "critical": false, "icon": "bi-cpu", "guide": {"steps": ["Tải HWiNFO bản Portable hoặc Installer từ trang chính thức.", "Mở HWiNFO → Summary hoặc Sensors. CPU phải hiện Intel Xeon W-11855M.", "Kiểm số nhân/luồng là 6C/12T; xem nhiệt độ khi idle và khi tải.", "Mở Sensors trong lúc chạy Cinebench/OCCT để xem xung, nhiệt và cờ Thermal Throttling.", "Không đánh giá chỉ bằng một con số nhiệt độ peak; ưu tiên xem máy có giữ ổn định và không crash hay không."], "pass": "PASS khi CPU nhận đúng, đủ nhân/luồng và hoạt động ổn định dưới tải.", "fail": "FAIL nếu sai CPU, thiếu core/thread, BSOD, tự tắt hoặc throttle bất thường kéo dài.", "tools": [["HWiNFO chính thức", "https://www.hwinfo.com/download/", "official"], ["Cinebench", "https://www.maxon.net/en/downloads/cinebench-downloads", "official"]]}}, {"id": "09", "group": "performance", "title": "GPU-Z phải nhận đúng RTX A4000 Laptop GPU 8GB", "desc": "Kiểm tra tên GPU, dung lượng VRAM 8GB, driver và bus. Không chấp nhận sai model, thiếu VRAM hoặc driver lỗi.", "tip": "", "critical": true, "icon": "bi-pci-card", "guide": {"steps": ["Mở GPU-Z. Tên GPU phải là NVIDIA RTX A4000 Laptop GPU hoặc tên tương ứng RTX A4000 mobile.", "Kiểm Memory Size phải là 8192 MB (8GB GDDR6).", "Kiểm driver đang nhận bình thường, không có lỗi Code 43 trong Device Manager.", "Có thể đối chiếu thêm trong HWiNFO/NVIDIA Control Panel.", "Trong GPU-Z bấm dấu ? cạnh Bus Interface và chạy Render Test nếu cần để kích hoạt GPU rời."], "pass": "PASS khi GPU nhận đúng RTX A4000, đủ 8GB VRAM và driver không lỗi.", "fail": "FAIL nếu sai GPU, thiếu VRAM, Code 43, driver crash hoặc card không tải được.", "tools": [["GPU-Z chính thức", "https://www.techpowerup.com/download/techpowerup-gpu-z/", "official"], ["HWiNFO", "https://www.hwinfo.com/download/", "official"]]}}, {"id": "10", "group": "performance", "title": "Stress GPU 15–20 phút", "desc": "Dùng OCCT / FurMark / benchmark tương đương. Không được có artifact, sọc, chấm màu, driver crash, màn đen hoặc restart.", "tip": "Artifact dù chỉ xuất hiện một lần cũng nên xem là red flag lớn.", "critical": true, "icon": "bi-fire", "guide": {"steps": ["Cắm sạc và đặt máy nơi thoáng. Mở HWiNFO Sensors để quan sát nhiệt/clock.", "Mở OCCT → chọn 3D Adaptive/GPU test. Chạy khoảng 15–20 phút ở cấu hình mặc định trước.", "Trong thời gian test, quan sát màn hình: không được có chấm màu, sọc, texture vỡ, màn đen hoặc nhấp nháy bất thường.", "Theo dõi OCCT error counter; lý tưởng là 0 error.", "Sau test, mở lại vài ứng dụng và kiểm tra driver NVIDIA có còn hoạt động bình thường."], "pass": "PASS khi test hết thời gian, 0 error, không artifact, không crash/restart và GPU hoạt động bình thường sau test.", "fail": "FAIL ngay nếu xuất hiện artifact, driver reset, màn đen, crash hoặc lỗi OCCT lặp lại.", "tools": [["OCCT Personal", "https://www.ocbase.com/download-personal", "official"]], "note": "Stress test làm máy nóng. Không che khe gió; dừng test nếu máy có mùi bất thường, tắt đột ngột hoặc xuất hiện artifact."}}, {"id": "11", "group": "performance", "title": "Stress CPU 10–15 phút", "desc": "Dùng Cinebench hoặc OCCT. Quan sát nhiệt, xung và độ ổn định. Tránh máy tự tắt, BSOD hoặc throttle bất thường kéo dài.", "tip": "", "critical": false, "icon": "bi-speedometer2", "guide": {"steps": ["Cắm sạc và mở HWiNFO Sensors.", "Dùng Cinebench CPU Multi Core hoặc OCCT CPU test trong khoảng 10–15 phút.", "Quan sát xung CPU, nhiệt, fan và Thermal Throttling.", "Điểm benchmark có thể dao động theo BIOS/power profile; mục tiêu chính là độ ổn định.", "Sau test, máy phải phản hồi bình thường, không BSOD hoặc treo."], "pass": "PASS khi CPU hoàn thành test ổn định, không lỗi tính toán, không BSOD/tắt máy.", "fail": "FAIL nếu crash, BSOD, tắt nguồn hoặc hiệu năng tụt cực mạnh liên tục dù quạt/tản nhiệt hoạt động.", "tools": [["Cinebench chính thức", "https://www.maxon.net/en/downloads/cinebench-downloads", "official"], ["OCCT CPU Test", "https://www.ocbase.com/download-personal", "official"]]}}, {"id": "12", "group": "performance", "title": "Stress CPU + GPU đồng thời 10 phút", "desc": "Đây là bài test quan trọng cho nguồn, VRM và hệ thống tản nhiệt. Máy không được reset, mất nguồn hoặc tụt hiệu năng bất thường.", "tip": "", "critical": true, "icon": "bi-lightning-charge", "guide": {"steps": ["Chỉ chạy sau khi CPU test và GPU test riêng đều PASS.", "Cắm đúng adapter, mở HWiNFO Sensors.", "Trong OCCT chọn Power test hoặc workload kết hợp CPU+GPU; chạy khoảng 10 phút.", "Theo dõi xem adapter có bị ngắt, máy reset, màn đen hoặc clock tụt bất thường kéo dài không.", "Sau khi kết thúc, để máy idle 2–3 phút xem nhiệt độ giảm và hệ thống phục hồi bình thường."], "pass": "PASS khi máy ổn định toàn bộ bài test, không reset, không mất nguồn và không có lỗi OCCT.", "fail": "FAIL nếu máy sập nguồn/restart, adapter ngắt, driver GPU crash hoặc xuất hiện lỗi phần cứng.", "tools": [["OCCT Power Test", "https://www.ocbase.com/download-personal", "official"]], "note": "Power test là tải nặng nhất. Chỉ chạy khi shop đồng ý và máy đang dùng adapter đúng công suất."}}, {"id": "13", "group": "performance", "title": "Kiểm RAM 16GB và ECC / Non-ECC", "desc": "Dùng HWiNFO xem dung lượng, số thanh, tốc độ và loại RAM. Xeon hỗ trợ ECC nhưng máy thực tế có thể đang dùng RAM thường.", "tip": "Ưu tiên nâng 32GB sau khi mua nếu chạy VM / MATLAB / CAD nặng.", "critical": false, "icon": "bi-memory", "guide": {"steps": ["Mở HWiNFO → Memory/Memory Modules để xem dung lượng, số thanh và tốc độ.", "Xác nhận tổng RAM 16GB; ghi lại đang là 1×16GB hay 2×8GB để biết phương án nâng 32GB.", "Tìm mục ECC/Memory Error Correction nếu HWiNFO hiển thị. Xeon hỗ trợ ECC nhưng RAM lắp thực tế có thể là Non‑ECC.", "Chạy Windows Memory Diagnostic: Win+R → mdsched.exe → Restart now and check for problems.", "Nếu có thời gian, chạy Dell F12 Advanced Memory Test."], "pass": "PASS khi đủ 16GB, không lỗi memory test và RAM hoạt động đúng tốc độ hợp lý.", "fail": "FAIL nếu memory test báo lỗi hoặc dung lượng/tốc độ không đúng như shop cam kết.", "tools": [["HWiNFO", "https://www.hwinfo.com/download/", "official"], ["Dell Diagnostics", "https://www.dell.com/support/kbdoc/en-us/000181163/how-to-enter-the-built-in-diagnostics-32-bit-diagnostics-supportassist-epsa-epsa-and-psa", "official"]]}}, {"id": "14", "group": "display", "title": "Xác minh native resolution 3840×2160", "desc": "Windows → Settings → Display → Advanced display. Kiểm tra native resolution đúng 4K và tần số quét hoạt động ổn định.", "tip": "", "critical": true, "icon": "bi-badge-4k", "guide": {"steps": ["Windows → Settings → System → Display → Advanced display.", "Chọn màn hình tích hợp. Xác nhận Desktop mode/Active signal mode ở native 3840×2160.", "Kiểm refresh rate khả dụng và xem hình ảnh có ổn định không.", "Mở TestUFO để kiểm chuyển động/refresh thực tế; dùng Chrome/Edge và đóng tab nặng khác."], "pass": "PASS khi Windows nhận native 3840×2160 và màn hoạt động ổn định ở refresh rate hỗ trợ.", "fail": "XEM LẠI nếu shop quảng cáo 4K nhưng native resolution không phải 3840×2160 hoặc màn chớp/mất tín hiệu.", "tools": [["TestUFO Refresh Rate", "https://testufo.com/", "online"]]}}, {"id": "15", "group": "display", "title": "Test dead pixel / stuck pixel", "desc": "Mở fullscreen nền trắng, đen, đỏ, xanh lá, xanh dương và xám. Tìm điểm chết, điểm sáng hoặc pixel kẹt.", "tip": "", "critical": false, "icon": "bi-grid-3x3-gap", "guide": {"steps": ["Lau sạch màn hình trước để tránh nhầm bụi với dead pixel.", "Mở DeadPixelTest và chuyển fullscreen.", "Lần lượt xem nền trắng, đen, đỏ, xanh lá, xanh dương và xám.", "Quan sát toàn bộ màn từ khoảng cách gần, nhất là vùng giữa và 4 góc.", "Dead pixel thường tối cố định; stuck pixel có thể sáng một màu cố định."], "pass": "PASS khi không có pixel chết/kẹt đáng chú ý và không có cụm lỗi.", "fail": "Thương lượng/đổi máy nếu có nhiều dead/stuck pixel, đặc biệt ở vùng trung tâm.", "tools": [["Dead Pixel Test", "https://deadpixeltest.org/", "online"]]}}, {"id": "16", "group": "display", "title": "Kiểm ám màu, hở sáng và pressure mark", "desc": "Quan sát đặc biệt ở mép màn hình và các vùng nền đồng màu. Màn 4K thay ngoài có thể khác chất lượng panel gốc.", "tip": "", "critical": false, "icon": "bi-brightness-high", "guide": {"steps": ["Ở phòng hơi tối, mở nền đen fullscreen để quan sát hở sáng ở 4 cạnh/góc.", "Mở nền xám để tìm ám màu, vùng loang, pressure mark hoặc vùng sáng tối bất thường.", "Dùng nền trắng để kiểm độ đồng đều và các vết ố.", "Thay đổi góc nhìn nhẹ để phân biệt IPS glow bình thường với hở sáng/pressure mark cố định."], "pass": "PASS khi màu tương đối đồng đều, không có vùng loang/pressure mark rõ trong sử dụng bình thường.", "fail": "FAIL/XEM LẠI nếu có mảng ám màu lớn, sọc, pressure mark hoặc hở sáng nghiêm trọng.", "tools": [["Dead Pixel / Solid Colors", "https://deadpixeltest.org/", "online"]]}}, {"id": "17", "group": "display", "title": "Tăng / giảm brightness 0–100%", "desc": "Đảm bảo không nhấp nháy, không xuất hiện vùng tối bất thường và độ sáng thay đổi đều.", "tip": "", "critical": false, "icon": "bi-sun", "guide": {"steps": ["Kéo brightness từ 0% → 25% → 50% → 75% → 100%.", "Ở mỗi mức, chờ vài giây và quan sát có flicker/nhấp nháy, mất sáng hoặc đổi màu bất thường không.", "Test khi cắm sạc và rút sạc để xem brightness có hành xử bình thường.", "Mở một trang nền trắng/xám để dễ phát hiện dao động sáng."], "pass": "PASS khi độ sáng thay đổi đều, không nhấp nháy hoặc tắt sáng bất thường.", "fail": "FAIL nếu backlight chập chờn, màn tối bất thường ở một vùng hoặc mất sáng khi thay đổi mức.", "tools": [["Screen Test", "https://deadpixeltest.org/", "online"]]}}, {"id": "18", "group": "battery", "title": "CrystalDiskInfo → SSD phải Good", "desc": "Kiểm SMART, health, power-on hours, total host writes, nhiệt độ và Critical Warning. SSD có warning thì nên yêu cầu thay.", "tip": "", "critical": false, "icon": "bi-device-ssd", "guide": {"steps": ["Mở CrystalDiskInfo và chọn đúng SSD NVMe 512GB.", "Health Status nên là Good; kiểm Critical Warning, Temperature, Power On Hours và Total Host Writes.", "Ghi lại model SSD để biết có đúng dung lượng/tốc độ shop quảng cáo.", "Nếu Health thấp hoặc có cảnh báo, yêu cầu thay SSD hoặc giảm giá tương ứng.", "Không dựa duy nhất vào phần trăm Health vì cách tính tùy hãng SSD; Critical Warning/SMART error quan trọng hơn."], "pass": "PASS khi Health Good, không Critical Warning/SMART error và ổ hoạt động ổn định.", "fail": "FAIL/XEM LẠI nếu Bad/Caution, Critical Warning khác 0, lỗi SMART hoặc nhiệt/hoạt động bất thường.", "tools": [["CrystalDiskInfo", "https://crystalmark.info/en/software/CrystalDiskInfo/", "official"]]}}, {"id": "19", "group": "battery", "title": "Battery Report", "desc": "Mở CMD và chạy powercfg /batteryreport . So sánh Design Capacity với Full Charge Capacity.", "tip": "", "critical": false, "icon": "bi-battery-half", "guide": {"steps": ["Mở Command Prompt/PowerShell với quyền bình thường và chạy: powercfg /batteryreport", "Windows sẽ báo đường dẫn file battery-report.html; mở file đó bằng trình duyệt.", "So sánh Design Capacity với Full Charge Capacity. Tính nhanh: Full Charge / Design × 100%.", "Xem Cycle Count nếu có và Recent usage để phát hiện tụt pin bất thường.", "Với máy 2021, pin hao mòn là bình thường; quan trọng là không phồng, không tụt cực nhanh và giá máy phản ánh tình trạng pin."], "pass": "PASS khi pin hoạt động ổn định; Full Charge Capacity còn hợp lý với tuổi máy và không có triệu chứng pin phồng/tắt nguồn.", "fail": "XEM LẠI nếu pin health quá thấp, tụt pin cực nhanh, không nhận pin hoặc có dấu hiệu phồng.", "tools": [["HWiNFO Battery Info", "https://www.hwinfo.com/download/", "official"]], "note": "Mốc % pin chỉ nên dùng như tham khảo: >80% tốt, khoảng 60–80% chấp nhận được với máy cũ nếu giá hợp lý; thấp hơn nên dự trù thay pin."}}, {"id": "20", "group": "battery", "title": "Rút sạc test thực tế 10–15 phút", "desc": "Mở video + trình duyệt, brightness khoảng 60–70%. Pin không nên tụt bất thường hoặc máy tắt ngay khi rút sạc.", "tip": "", "critical": false, "icon": "bi-battery", "guide": {"steps": ["Sạc pin lên ít nhất khoảng 50%.", "Rút adapter, đặt brightness 60–70%, bật Wi‑Fi và mở video 1080p + vài tab trình duyệt.", "Theo dõi 10–15 phút: phần trăm pin phải giảm tương đối đều, không nhảy số hoặc tắt đột ngột.", "Cắm sạc lại và kiểm máy nhận adapter ngay, biểu tượng pin chuyển sang charging.", "Không dùng test ngắn này để ước lượng chính xác thời lượng pin; mục tiêu là phát hiện pin lỗi rõ."], "pass": "PASS khi máy chạy ổn khi rút sạc và nhận sạc lại bình thường.", "fail": "FAIL nếu tắt ngay khi rút sạc, pin nhảy % lớn hoặc không nhận sạc ổn định.", "tools": []}}, {"id": "21", "group": "battery", "title": "Adapter phải được BIOS nhận đúng", "desc": "Không nên nhận máy nếu BIOS báo Unknown/Not Installed khi đang cắm adapter. Yêu cầu đúng adapter phù hợp cấu hình máy.", "tip": "", "critical": true, "icon": "bi-plug", "guide": {"steps": ["Cắm adapter vào máy rồi restart vào BIOS bằng F2.", "Tìm AC Adapter Type/Adapter Information. BIOS phải nhận adapter, không được báo Unknown/Not Installed.", "Quan sát đầu cắm và dây adapter, không lỏng, cháy xém hoặc nóng bất thường.", "Trong Windows, chạy CPU/GPU stress và xem máy có báo 'plugged in, not charging' bất thường hoặc tụt pin dù cắm sạc không."], "pass": "PASS khi BIOS nhận đúng adapter và máy không tụt pin/giới hạn bất thường dưới tải.", "fail": "FAIL/XEM LẠI nếu BIOS báo Unknown, jack chập chờn hoặc pin tụt nhanh khi đang cắm sạc.", "tools": [["Dell Diagnostics", "https://www.dell.com/support/kbdoc/en-us/000181163/how-to-enter-the-built-in-diagnostics-32-bit-diagnostics-supportassist-epsa-epsa-and-psa", "official"]]}}, {"id": "22", "group": "ports", "title": "Test toàn bộ bàn phím + numpad + đèn nền", "desc": "Dùng keyboard tester. Kiểm Ctrl, Shift, Alt, Fn, F1–F12, Enter, Backspace, mũi tên và numpad.", "tip": "", "critical": false, "icon": "bi-keyboard", "guide": {"steps": ["Mở Keyboard Test online.", "Bấm từng phím từ Esc, F1–F12, hàng số, chữ cái, Shift/Ctrl/Alt, Space, Enter, Backspace, mũi tên và numpad.", "Bấm mỗi phím vài lần để phát hiện double-key hoặc phím chập chờn.", "Test Fn + các phím chức năng (brightness, volume, keyboard backlight) trực tiếp trên máy.", "Nếu có phím không hiện trên web do browser giữ shortcut, kiểm bằng Notepad hoặc công cụ thứ hai."], "pass": "PASS khi tất cả phím nhận ổn định, không double-key/mất phím và đèn nền hoạt động.", "fail": "FAIL/XEM LẠI nếu phím chết, double-key hoặc cụm phím chức năng không hoạt động.", "tools": [["Keyboard Test", "https://webcammictest.com/keyboard/", "online"], ["KeyboardTester", "https://www.keyboardtester.com/", "online"]]}}, {"id": "23", "group": "ports", "title": "Test touchpad, webcam, mic và loa", "desc": "Kiểm multi-touch, scroll hai ngón, click trái/phải, camera, ghi âm microphone và loa ở âm lượng cao.", "tip": "", "critical": false, "icon": "bi-camera-video", "guide": {"steps": ["Touchpad: di chuyển con trỏ khắp bề mặt, click trái/phải, scroll hai ngón, pinch zoom và drag.", "Webcam: mở Webcam Test, cho phép quyền Camera, kiểm hình ảnh, FPS và độ ổn định.", "Mic: mở Mic Test, cho phép quyền Microphone, nói thử và nghe playback.", "Loa/tai nghe: mở Headphone Test để phát Left/Right; kiểm cả hai loa không rè ở âm lượng 70–100%.", "Cắm tai nghe 3.5mm nếu có để test jack audio."], "pass": "PASS khi touchpad, webcam, mic và hai kênh loa hoạt động ổn, không rè/mất tiếng.", "fail": "FAIL/XEM LẠI nếu camera/mic không nhận, loa rè mạnh hoặc touchpad có vùng chết.", "tools": [["Webcam Test", "https://webcammictest.com/", "online"], ["Mic Test", "https://mictests.com/", "online"], ["Speaker L/R Test", "https://webcammictest.com/headphones/", "online"], ["Mouse/Touchpad Test", "https://webcammictest.com/mouse/", "online"]]}}, {"id": "24", "group": "ports", "title": "Test USB-A, USB-C/Thunderbolt, HDMI, LAN, audio, SD", "desc": "Mang theo USB và nếu có thể là màn hình ngoài / cáp HDMI. Cổng không được lúc nhận lúc không.", "tip": "", "critical": false, "icon": "bi-usb-drive", "guide": {"steps": ["Mang theo USB-A và nếu có USB-C. Copy một file vài trăm MB qua từng cổng để kiểm kết nối ổn định.", "Test HDMI hoặc USB-C/Thunderbolt với màn hình ngoài nếu shop có sẵn.", "Cắm dây LAN vào RJ45 và kiểm link/speed trong Windows.", "Test jack 3.5mm bằng tai nghe; test khe SD bằng thẻ nhớ nếu có.", "Vừa cắm vừa rung nhẹ đầu cáp; cổng không nên mất kết nối chập chờn."], "pass": "PASS khi tất cả cổng cần dùng nhận thiết bị ổn định và không ngắt kết nối khi chạm nhẹ.", "fail": "FAIL/XEM LẠI nếu cổng lỏng, mất kết nối, không xuất hình hoặc không nhận thiết bị.", "tools": []}}, {"id": "25", "group": "ports", "title": "Test Wi‑Fi, Bluetooth, Sleep/Wake và Restart", "desc": "Kết nối Wi‑Fi, pair Bluetooth, sleep/wake vài lần và restart. Kiểm tra Device Manager không có dấu chấm than vàng.", "tip": "", "critical": false, "icon": "bi-wifi", "guide": {"steps": ["Wi‑Fi: kết nối mạng shop và chạy speed test 2–3 lần; so với điện thoại cùng mạng để phát hiện card/anten bất thường.", "Bluetooth: pair tai nghe hoặc điện thoại, phát âm thanh vài phút.", "Sleep/Wake: cho máy Sleep rồi đánh thức 3 lần; không được màn đen hoặc mất Wi‑Fi/GPU.", "Restart máy 2–3 lần.", "Mở Device Manager và kiểm không có Unknown Device/dấu chấm than vàng."], "pass": "PASS khi Wi‑Fi/Bluetooth ổn định, sleep/wake/restart bình thường và Device Manager sạch lỗi.", "fail": "FAIL/XEM LẠI nếu Wi‑Fi rớt liên tục, Bluetooth lỗi, resume màn đen hoặc Device Manager có lỗi phần cứng/driver.", "tools": [["Internet Speed Test", "https://webcammictest.com/internet/", "online"]]}}, {"id": "28", "group": "windows", "title": "Settings → System → Activation phải hiển thị Windows đã được kích hoạt", "desc": "Kiểm tra đúng Edition (ưu tiên Windows Pro/Pro for Workstations nếu shop cam kết) và trạng thái Activation. Digital License là hình thức kích hoạt hợp lệ; nếu liên kết tài khoản Microsoft thì Windows sẽ ghi rõ điều đó.", "tip": "“Activated” chưa đủ để kết luận bản quyền nguồn gốc hợp lệ — phải kiểm thêm license channel bên dưới.", "critical": true, "icon": "bi-windows", "guide": {"steps": ["Nhấn Win + I → System → Activation.", "Ghi lại Windows edition đang cài (ví dụ Windows 11 Pro) và Activation state.", "Trạng thái nên là 'Windows is activated with a digital license' hoặc '...digital license linked to your Microsoft account'.", "Nếu shop đăng nhập tài khoản Microsoft cá nhân của họ, không nên lấy việc đó làm bằng chứng bản quyền cho bạn; hãy kiểm license channel bằng slmgr.", "Chụp ảnh trang Activation để lưu cùng hồ sơ test máy."], "pass": "PASS khi Windows báo Activated và edition phù hợp với giấy phép/máy. Tiếp tục kiểm slmgr /dlv để xác định channel.", "fail": "FAIL/XEM LẠI nếu Windows Not activated, có lỗi activation hoặc edition shop cam kết không khớp.", "tools": [["Microsoft Activation", "https://support.microsoft.com/vi-vn/windows/activation/activate-windows", "official"]], "note": "Microsoft nêu rõ Activation chỉ xác nhận khóa/bản quyền số hợp lệ với cấu hình phần cứng; trạng thái Activated không tự nó chứng minh toàn bộ nguồn gốc bản quyền."}}, {"id": "29", "group": "windows", "title": "Chạy slmgr /xpr để kiểm trạng thái kích hoạt lâu dài", "desc": "Lệnh này cho biết Windows đang được kích hoạt vĩnh viễn hay có ngày hết hạn. KMS client thường có thời hạn kích hoạt và gia hạn định kỳ.", "tip": "", "critical": true, "icon": "bi-hourglass-split", "guide": {"steps": ["Nhấn Win + R, gõ cmd rồi Enter. Không cần quyền Administrator cho lệnh kiểm tra này.", "Nhập: slmgr /xpr", "Chờ hộp thoại Windows Script Host xuất hiện.", "Nếu hiện 'The machine is permanently activated' thì activation hiện tại không có ngày hết hạn.", "Nếu hiển thị ngày/giờ hết hạn, ghi lại và kiểm tiếp slmgr /dlv để xem có phải KMS/Volume client hay không."], "pass": "PASS khi máy báo permanently activated VÀ bước slmgr /dlv cho thấy channel hợp lý với nguồn gốc máy.", "fail": "XEM LẠI nếu có expiration date trên máy bán cho cá nhân, đặc biệt nếu channel là VOLUME_KMSCLIENT.", "tools": [["Microsoft: slmgr options", "https://learn.microsoft.com/en-us/windows-server/get-started/activation-slmgr-vbs-options", "official"]]}}, {"id": "30", "group": "windows", "title": "Chạy slmgr /dlv và kiểm Product Key Channel", "desc": "Phân biệt Retail/OEM với Volume/KMS. Nếu thấy VOLUME_KMSCLIENT , KMS server hoặc activation interval thì phải hỏi rõ nguồn gốc bản quyền trước khi mua.", "tip": "Máy doanh nghiệp cũ có thể từng dùng KMS hợp pháp trong công ty, nhưng khi bán cho cá nhân cần làm rõ quyền sử dụng sau chuyển nhượng.", "critical": true, "icon": "bi-key-fill", "guide": {"steps": ["Nhấn Win + R → gõ cmd → Enter.", "Nhập: slmgr /dlv", "Trong hộp thoại, tìm Description / Product Key Channel / License Status / KMS machine name nếu có.", "Retail hoặc OEM channel thường phù hợp hơn với máy bán lẻ/cá nhân. OEM_DM thường liên quan key OEM nhúng firmware.", "Nếu thấy VOLUME_KMSCLIENT, KMS server, activation interval hoặc renewal interval: chụp ảnh và hỏi shop nguồn gốc license.", "Nếu máy từng thuộc doanh nghiệp và dùng KMS hợp pháp, yêu cầu shop cung cấp phương án license hợp lệ sau khi bán cho cá nhân thay vì để phụ thuộc KMS của đơn vị cũ."], "pass": "PASS khi License Status = Licensed và channel phù hợp (thường Retail/OEM đối với máy bán cho cá nhân), không phụ thuộc KMS không rõ nguồn gốc.", "fail": "FAIL/XEM LẠI nếu dùng VOLUME_KMSCLIENT/KMS server không rõ nguồn gốc, license notification/unlicensed hoặc shop né tránh giải thích.", "tools": [["Microsoft: /dlv & /xpr", "https://learn.microsoft.com/en-us/windows-server/get-started/activation-slmgr-vbs-options", "official"]], "note": "Không đánh giá 'KMS = lậu' một cách tuyệt đối: KMS là cơ chế hợp pháp cho tổ chức có Volume Licensing. Vấn đề là quyền sử dụng đó có hợp lệ và còn áp dụng sau khi máy được bán cho bạn hay không."}}, {"id": "31", "group": "windows", "title": "Kiểm OEM key nhúng trong firmware/BIOS bằng PowerShell", "desc": "Dùng CIM để đọc OA3xOriginalProductKey. Có key OEM trong firmware là một dấu hiệu tốt, nhưng ô trống không tự động đồng nghĩa Windows lậu vì máy có thể dùng Digital License theo cơ chế khác.", "tip": "", "critical": false, "icon": "bi-hdd-rack", "guide": {"steps": ["Mở Windows PowerShell.", "Chạy: (Get-CimInstance -ClassName SoftwareLicensingService).OA3xOriginalProductKey", "Nếu xuất hiện key 25 ký tự, chỉ chụp 5 ký tự cuối hoặc che phần lớn key khi lưu ảnh để tránh lộ khóa sản phẩm.", "Nếu kết quả trống, không vội kết luận Windows không bản quyền; máy có thể dùng Digital License hoặc cơ chế OEM khác.", "Đối chiếu tiếp Settings → Activation và slmgr /dlv."], "pass": "PASS khi có OEM key hợp lý hoặc Digital License/channel khác được xác minh rõ.", "fail": "Không dùng riêng mục này để FAIL máy. Chỉ đánh dấu XEM LẠI khi kết quả trống và các bước activation/channel khác cũng bất thường.", "tools": [["Microsoft Activation", "https://support.microsoft.com/vi-vn/windows/activation/activate-windows", "official"]]}}, {"id": "32", "group": "windows", "title": "Đối chiếu Edition và kiểu license với cấu hình máy", "desc": "Kiểm Windows 10/11 Pro, Pro for Workstations hoặc edition đang cài. Edition cài đặt phải phù hợp với giấy phép mà máy có quyền sử dụng.", "tip": "", "critical": false, "icon": "bi-pc-display", "guide": {"steps": ["Nhấn Win + R → gõ winver → Enter để xem edition/version/build.", "Vào Settings → System → Activation để xác nhận lại Edition.", "Có thể mở CMD và chạy: DISM /Online /Get-CurrentEdition", "Đối chiếu với nội dung shop cam kết. Ví dụ shop bán Windows Pro thì không nên đang cài Home rồi nói sẽ 'nâng sau'.", "Nếu dự định cài lại Windows, phải cài đúng edition được license hỗ trợ để tự kích hoạt lại."], "pass": "PASS khi edition đang cài khớp với license/shop cam kết và activation hoạt động bình thường.", "fail": "XEM LẠI nếu edition không khớp, activation chỉ hoạt động sau script lạ hoặc shop không giải thích được license entitlement.", "tools": [["Microsoft Activation / Edition", "https://support.microsoft.com/vi-vn/windows/activation/activate-windows", "official"]]}}, {"id": "33", "group": "windows", "title": "Kiểm dấu hiệu crack/KMS không rõ nguồn gốc", "desc": "Không nên chỉ tin watermark biến mất hoặc dòng “Activated”. Kiểm Scheduled Tasks/Services, Windows Security và lịch sử activation nếu có dấu hiệu dùng activator không rõ nguồn gốc.", "tip": "", "critical": false, "icon": "bi-shield-exclamation", "guide": {"steps": ["Mở Windows Security → Virus & threat protection → Protection history, xem có activator/crack/keygen bị phát hiện hay không.", "Mở Task Scheduler và Services chỉ để quan sát; tìm tên KMS/AutoKMS/KMSpico hoặc tác vụ kích hoạt định kỳ đáng ngờ.", "Mở CMD và chạy slmgr /dlv để xem có KMS server/Volume channel hay không.", "Không xóa hoặc chỉnh dịch vụ tại shop; nếu thấy dấu hiệu activator, yêu cầu shop cài sạch Windows từ nguồn Microsoft và kích hoạt bằng license hợp lệ trước khi nhận máy.", "Sau khi mua, nếu muốn chắc chắn nhất, có thể cài sạch Windows từ Microsoft rồi kiểm xem máy có tự activate lại đúng edition hay không."], "pass": "PASS khi không có dấu hiệu activator không rõ nguồn gốc và activation/channel hợp lý.", "fail": "FAIL/XEM LẠI nếu có AutoKMS/KMSpico/activator, tác vụ gia hạn đáng ngờ hoặc Windows Security từng cách ly công cụ crack.", "tools": [["Microsoft Windows Download", "https://www.microsoft.com/software-download/windows11", "official"], ["Microsoft Activation", "https://support.microsoft.com/vi-vn/windows/activation/activate-windows", "official"]]}}, {"id": "26", "group": "warranty", "title": "Yêu cầu ghi rõ phạm vi bảo hành", "desc": "Hóa đơn/phiếu bảo hành nên ghi rõ mainboard, GPU RTX A4000, màn hình, RAM, SSD và nguồn. Hỏi thời gian xử lý và điều kiện đổi máy.", "tip": "", "critical": true, "icon": "bi-file-earmark-check", "guide": {"steps": ["Yêu cầu shop ghi thời gian bảo hành và ngày bắt đầu rõ trên hóa đơn/phiếu.", "Hỏi trực tiếp: mainboard, RTX A4000, màn 4K, RAM, SSD, pin và adapter hỏng thì phạm vi xử lý thế nào.", "Hỏi điều kiện đổi máy nếu lỗi nặng trong những ngày đầu.", "Ghi rõ serial/Service Tag máy trên hóa đơn nếu shop hỗ trợ.", "Dùng Service Tag kiểm tra Dell warranty/service history; bảo hành shop là chính với máy đã hết Dell warranty."], "pass": "PASS khi điều khoản bảo hành rõ, có chứng từ và bao phủ main/GPU/màn phù hợp giá trị máy.", "fail": "XEM LẠI nếu shop chỉ nói miệng, loại trừ main/GPU/màn hoặc không ghi được máy cụ thể trên chứng từ.", "tools": [["Dell Warranty / Service", "https://www.dell.com/support/contractservices/en-vn/", "official"]]}}, {"id": "27", "group": "warranty", "title": "Chỉ thanh toán khi các hạng mục quan trọng đều PASS", "desc": "F12 Diagnostics, Service Tag, RTX A4000 stress, CPU+GPU stress, màn 4K, SSD/pin và phạm vi bảo hành phải đạt yêu cầu.", "tip": "Nếu main / GPU / màn có dấu hiệu đáng ngờ → bỏ máy, không thương lượng bằng vài trăm nghìn.", "critical": true, "icon": "bi-bag-check", "guide": {"steps": ["Đảm bảo các mục bắt buộc: Service Tag, F12 Diagnostics, GPU-Z, GPU stress, CPU+GPU stress, màn 4K, adapter và bảo hành đều PASS.", "Xem lại số mục WARN/FAIL ở thanh tiến độ.", "Chụp ảnh BIOS, GPU-Z, HWiNFO, CrystalDiskInfo và phiếu bảo hành để lưu.", "Nếu GPU/main/màn có dấu hiệu lỗi, ưu tiên đổi sang máy khác thay vì giảm giá.", "Nếu toàn bộ mục quan trọng PASS, kiểm tra lần cuối phụ kiện, adapter và bàn giao trước khi thanh toán."], "pass": "Có thể chốt khi các mục bắt buộc PASS, không có lỗi phần cứng nghiêm trọng và bảo hành rõ ràng.", "fail": "Không nên chốt nếu có FAIL ở GPU, main/F12 Diagnostics, màn hình, nguồn/adapter hoặc điều khoản bảo hành không rõ.", "tools": []}}];
     const CATEGORIES = {"physical": {"name": "Ngoại hình", "icon": "bi-laptop", "desc": "Vỏ máy, bản lề, pin phồng"}, "bios": {"name": "BIOS & Dell", "icon": "bi-motherboard", "desc": "Service Tag, F12 Diagnostics"}, "performance": {"name": "CPU / GPU / RAM", "icon": "bi-cpu", "desc": "Xeon, RTX A4000, stress test"}, "display": {"name": "Màn hình 4K", "icon": "bi-display", "desc": "4K, pixel, màu, độ sáng"}, "battery": {"name": "SSD / Pin / Sạc", "icon": "bi-battery-charging", "desc": "SMART, pin, adapter"}, "ports": {"name": "Cổng & thiết bị", "icon": "bi-usb-symbol", "desc": "Phím, touchpad, Wi‑Fi, cổng"}, "windows": {"name": "Bản quyền Windows", "icon": "bi-windows", "desc": "Activation, OEM, Retail/KMS"}, "warranty": {"name": "Bảo hành & Chốt", "icon": "bi-shield-check", "desc": "Điều khoản bảo hành, quyết định"}};
     const STORAGE_KEY = "precision7560_grid_popup_v1";
     let currentFilter = "all";
@@ -394,7 +986,20 @@
 
     function renderFilters(){
       const $f = $("#filters").empty();
-      $f.append(`<button class="filter-btn active" data-filter="all"><i class="bi bi-grid-3x3-gap"></i>Tất cả</button>`);
+
+      $f.append(`
+        <button class="filter-btn active" data-filter="all">
+          <i class="bi bi-grid-3x3-gap-fill"></i>Tất cả
+        </button>
+        <button class="filter-btn quick-filter" data-filter="untested">
+          <i class="bi bi-circle"></i>Chưa test
+        </button>
+        <button class="filter-btn quick-filter" data-filter="important">
+          <i class="bi bi-exclamation-circle-fill"></i>Quan trọng
+        </button>
+        <span class="filter-separator" aria-hidden="true"></span>
+      `);
+
       Object.entries(CATEGORIES).forEach(([key,c])=>{
         $f.append(`<button class="filter-btn" data-filter="${key}"><i class="bi ${c.icon}"></i>${c.name}</button>`);
       });
@@ -403,7 +1008,18 @@
     function renderGrid(){
       const q = $("#searchInput").val().trim().toLowerCase();
       const list = ITEMS.filter(item => {
-        const matchFilter = currentFilter === "all" || item.group === currentFilter;
+        let matchFilter = false;
+
+        if(currentFilter === "all"){
+          matchFilter = true;
+        }else if(currentFilter === "untested"){
+          matchFilter = !states[item.id];
+        }else if(currentFilter === "important"){
+          matchFilter = !!item.critical;
+        }else{
+          matchFilter = item.group === currentFilter;
+        }
+
         const hay = `${item.title} ${item.desc} ${CATEGORIES[item.group].name}`.toLowerCase();
         return matchFilter && (!q || hay.includes(q));
       });
@@ -411,7 +1027,7 @@
       const $grid = $("#grid").empty();
       list.forEach(item => {
         const s = states[item.id] || "";
-        const critical = item.critical ? `<span class="critical-dot" title="Mục quan trọng"></span>` : "";
+        const critical = item.critical ? `<span class="critical-dot" title="Mục bắt buộc / quan trọng"></span>` : "";
         const stateAttr = s ? `data-state="${s}"` : "";
         $grid.append(`
           <article class="test-card" data-id="${item.id}" ${stateAttr}>
@@ -448,6 +1064,17 @@
       $("#passCount").text(pass);
       $("#warnCount").text(warn);
       $("#failCount").text(fail);
+
+      const untestedCount = ITEMS.length - done;
+      const importantCount = ITEMS.filter(i => i.critical).length;
+      const importantUntested = ITEMS.filter(i => i.critical && !states[i.id]).length;
+
+      const $untestedTab = $('.filter-btn[data-filter="untested"]');
+      const $importantTab = $('.filter-btn[data-filter="important"]');
+
+      $untestedTab.html(`<i class="bi bi-circle"></i>Chưa test <span class="tab-count">${untestedCount}</span>`);
+      $importantTab.html(`<i class="bi bi-exclamation-circle-fill"></i>Quan trọng <span class="tab-count">${importantUntested}/${importantCount}</span>`);
+
       $("#progressText").text(`${done} / ${ITEMS.length} mục đã test`);
       $("#progressPercent").text(`${pct}% hoàn thành`);
       $("#progressBar").css("width",pct+"%");
