@@ -64,7 +64,7 @@
 
     /* ===== TOPBAR ===== */
     .topbar{
-      position:sticky;
+      position:relative;
       top:0;
       z-index:60;
       margin:-20px -26px 18px;
@@ -213,7 +213,7 @@
     /* ===== PROGRESS ===== */
     .statusbar{
       position:sticky;
-      top:69px;
+      top:5px;
       z-index:45;
       display:grid;
       grid-template-columns:minmax(0,1fr) auto;
@@ -791,7 +791,7 @@
 
     @media (max-width:900px){
       .overview{grid-template-columns:1fr}
-      .statusbar{top:67px;grid-template-columns:1fr}
+      .statusbar{top:5px;grid-template-columns:1fr}
       .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
       .counters{justify-content:space-between}
       .counter{flex:1}
